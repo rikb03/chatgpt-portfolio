@@ -15,26 +15,27 @@ class db{
         return $conn;
     }
     // Select from database and return results
-    function SQLSelect($sql){
+    function SQLReturnResult($sql){
         try {
             $conn = $this->SQLConnectDB();
             $stmt = $conn->prepare($sql);
             $stmt->execute();
-            global $results;
             $results = $stmt->fetchall(PDO::FETCH_ASSOC);
+            //return results as array
+            return $results;
           } catch(PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            echo "Error: " . $e->getMessage();
           }
         $conn = null;
     }
     // Insert into database
-    function SQLInsert($sql){
+    function SQLNoResult($sql){
         try {
             $conn = $this->SQLConnectDB();
             $stmt = $conn->prepare($sql);
             $stmt->execute();
         } catch(PDOException $e){
-            echo "Connection failed: " . $e->getMessage();
+            echo $sql . "<BR>" . $e->getMessage();
         }
         $conn = null;
     }        
