@@ -4,8 +4,12 @@ function routing(){
 
     $routes = [
         "/" => "controllers/index.php",
-        "/about" => "controllers/about.php",
-        "/404" => "controllers/404.php"
+        "/404" => "controllers/404.php",
+        "/details" => "controllers/details.php",
+        "/login" => "controllers/login.php",
+        "/edit" => "controllers/userdetails.php",
+        "/changepassword" => "controllers/passwordchange.php",
+        "/admin" => "controllers/admin.php",
     ];
 
     if(array_key_exists($_SERVER['REQUEST_URI'], $routes)) {
