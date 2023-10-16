@@ -1,11 +1,12 @@
 <?php
-$db = new db();
 class db{
+    // Get database parameters from private.php 
     private function getDBParams(){
         $app = require 'private.php';
         $dbconn = $app['database'];
         return $dbconn;
     }
+    // Connect to database with PDO and return connection 
     function SQLConnectDB(){
         $dbconn = $this->getDBParams();
         $conn = new PDO("mysql:host=$dbconn[servername];dbname=$dbconn[db]", $dbconn['username'], $dbconn['password']);
@@ -13,6 +14,7 @@ class db{
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     }
+    // Select from database and return results
     function SQLSelect($sql){
         try {
             $conn = $this->SQLConnectDB();
@@ -25,6 +27,7 @@ class db{
           }
         $conn = null;
     }
+    // Insert into database
     function SQLInsert($sql){
         try {
             $conn = $this->SQLConnectDB();
@@ -34,6 +37,5 @@ class db{
             echo "Connection failed: " . $e->getMessage();
         }
         $conn = null;
-    }
-        
+    }        
 }
