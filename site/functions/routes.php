@@ -14,7 +14,11 @@ function routing(){
     // Check if the URL exists in the array and require the correct controller else require the 404 controller
     if(array_key_exists($_SERVER['REQUEST_URI'], $routes)) {
         require $routes[$_SERVER['REQUEST_URI']];
-    } else {
+    } 
+    elseif(str_contains($_SERVER['REQUEST_URI'], "?id")){
+        require $routes["/details"];
+    }
+    else {
         // echo "404";
         require $routes['/404'];
     };
