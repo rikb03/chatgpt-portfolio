@@ -2,7 +2,7 @@
 class db{
     // Get database parameters from private.php 
     private function getDBParams(){
-        $app = require 'private.php';
+        $app = parse_ini_file("env.ini", true);
         $dbconn = $app['database'];
         return $dbconn;
     }
