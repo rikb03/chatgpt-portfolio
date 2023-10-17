@@ -1,6 +1,6 @@
 <?php
-echo "<a href='/'> Index </a>";
-echo "<a href='/login'> Login </a>";
-echo "<hr>";
-// Zet de links in een hamburger menu rechtsboven en zet een logo/viewnaam linksboven
+echo "<nav>
+        <div class='title'><a href='/'><h1>Logo</h1></a></div>
+        <div class='hamburger'><h1> X </h1></div>
+    </nav>";
 ?>
