@@ -28,6 +28,22 @@ class db{
           }
         $conn = null;
     }
+    // Select from database with parameters and return results
+    function SQLReturnResultWithParams($sql, $param, $var){
+        try {
+            $conn = $this->SQLConnectDB();
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam($param, $var);
+            $stmt->execute();
+            $results = $stmt->fetchall(PDO::FETCH_ASSOC);
+            //return results as array
+            return $results;
+          } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+          }
+        $conn = null;
+    }
+    
     // Insert into database
     function SQLNoResult($sql){
         try {
