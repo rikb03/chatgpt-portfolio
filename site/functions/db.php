@@ -1,6 +1,6 @@
 <?php
 class db{
-    // Get database parameters from private.php 
+    // Get database parameters from env.ini
     private function getDBParams(){
         $app = parse_ini_file("env.ini", true);
         $dbconn = $app['database'];
