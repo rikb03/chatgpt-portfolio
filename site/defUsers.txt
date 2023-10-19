@@ -1,0 +1,7 @@
+rikb = welkom123
+jarik = geheim
+dorianb = wachtwoord
+ashrafb = password
+kdk3 = k3!
+kvk3 = k3@
+kak3 = k3#

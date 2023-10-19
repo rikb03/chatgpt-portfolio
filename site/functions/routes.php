@@ -9,6 +9,9 @@ $routes = [
     "/edit" => "controllers/userdetails.php",
     "/changepassword" => "controllers/passwordchange.php",
     "/admin" => "controllers/admin.php",
+    "/authenticate" => "controllers/authenticate.php",
+    "/signup" => "controllers/signup.php",
+    "/logout" => "controllers/logout.php",
     "/test" => "test.php"
 ];
 // Check if the URL exists in the array and require the correct controller else require the 404 controller
