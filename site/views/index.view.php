@@ -1,6 +1,6 @@
 <?php
 require "functions/db.php";
-echo "<head><link rel='stylesheet' href='styles/mainstyle.css'></head>";
+echo "<head><link rel='stylesheet' href='public/styles/mainstyle.css'></head>";
 require 'views/partials/nav.php';
 $db = new db;
 echo "<main><h1> Welkom </h1> <p> Dit zijn onze mensen </p>";

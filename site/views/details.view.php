@@ -1,6 +1,6 @@
 <?php
 require 'functions/db.php';
-echo "<head><link rel='stylesheet' href='styles/mainstyle.css'></head>";
+echo "<head><link rel='stylesheet' href='public/styles/mainstyle.css'></head>";
 require 'views/partials/nav.php';
 echo "<h1> Profile </h1>";
 $id = $_GET["id"];
