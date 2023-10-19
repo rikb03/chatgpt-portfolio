@@ -6,14 +6,34 @@ class db{
         $dbconn = $app['database'];
         return $dbconn;
     }
-    // Connect to database with PDO and return connection 
+    
+    //Connect to database with PDO and return connection 
+    // function SQLConnectDB(){
+    //     $dbconn = $this->getDBParams();
+    //     $conn = new PDO("mysql:host=$dbconn[servername];dbname=$dbconn[db]", $dbconn['username'], $dbconn['password']);
+    //     // set the PDO error mode to exception
+    //     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //     return $conn;
+    // }
+
+    // Connect to database with PDO and return connection if database exists, else create database and return connection
     function SQLConnectDB(){
         $dbconn = $this->getDBParams();
-        $conn = new PDO("mysql:host=$dbconn[servername];dbname=$dbconn[db]", $dbconn['username'], $dbconn['password']);
-        // set the PDO error mode to exception
+        $conn = new PDO("mysql:host=$dbconn[servername]", $dbconn["username"], $dbconn["password"]);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if($conn->query("SELECT * FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = '$dbconn[db]'")->rowCount() > 0) {
+        $conn = new PDO("mysql:dbname=$dbconn[db];host=$dbconn[servername]", $dbconn["username"], $dbconn["password"]);
+        } else {
+            $file = file_get_contents('dbFiles/profileapp.sql', FALSE, NULL);
+            $sql = "CREATE DATABASE $dbconn[db]";
+            $conn->exec($sql);
+            $conn = null;
+            $conn = new PDO("mysql:dbname=$dbconn[db];host=$dbconn[servername]", $dbconn["username"], $dbconn["password"]);
+            $conn->exec($file);
+        }
         return $conn;
     }
+
     // Select from database and return results
     function SQLReturnResult($sql){
         try {
@@ -28,6 +48,7 @@ class db{
           }
         $conn = null;
     }
+    
     // Select from database with parameters and return results
     function SQLReturnResultWithParams($sql, $param, $var){
         try {
@@ -54,5 +75,5 @@ class db{
             echo $sql . "<BR>" . $e->getMessage();
         }
         $conn = null;
-    }        
+    }
 }
