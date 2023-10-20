@@ -8,6 +8,7 @@ $routes = [
     "/login" => "controllers/login.php",
     "/edit" => "controllers/userdetails.php",
     "/changepassword" => "controllers/passwordchange.php",
+    "/changePass" => "controllers/changePass.php",
     "/admin" => "controllers/admin.php",
     "/authenticate" => "controllers/authenticate.php",
     "/signup" => "controllers/signup.php",
