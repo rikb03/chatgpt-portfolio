@@ -1,6 +1,6 @@
-<?php
-echo
-'       <nav class="navbar">
+<div class="container">
+    <header>
+        <nav class="navbar">
             <div class="local">
                 <h2>Profile App</h2>
             </div>
@@ -18,6 +18,5 @@ echo
                 <span class="bar"></span>
             </div>
         </nav>
-        ';
-?>
-
+    </header>
+</div>
