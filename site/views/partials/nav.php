@@ -1,6 +1,22 @@
-<?php
-echo "<nav>
-        <div class='title'><a href='/'><h1>Logo</h1></a></div>
-        <div class='hamburger'><h1> X </h1></div>
-    </nav>";
-?>
+<div class="container">
+    <header>
+        <nav class="navbar">
+            <div class="local">
+                <h2>Profile App</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+</div>
