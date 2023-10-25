@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #424549;
+}
+
+header {
+    line-height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: #1e2124;
+    grid-column-start: span 0;
+    grid-column-end: span 3;
+}
+
+header h2{
+    color: #7289da;
+}
+
+main {
+    background-color: #282b30;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.container nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 100px auto auto 100px;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #7289da;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-weight: 400;
+    color: #7289da;
+    text-decoration: none;
+}
+
+.nav-menu {
+    position: fixed;
+    left: 100%;
+    top: 100px;
+    flex-direction: column;
+    background-color: #282b30;
+    width: 150px;
+    text-align: center;
+    transition: 0.6s;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu.active {
+    left: calc(100% - 150px);
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-item {
+    font-size: 1em;
+}
+
+.form {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 14px;
+}
+
+.login h1 {
+    align-items: center;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.login p {
+    color: white;
+}
+
+.login a {
+    color: 	#7289da;
+}
+
+.login {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px white solid;*/
+    width: 70%;
+    height: 500px;
+    flex-flow: column wrap;
+    background-color: #36393e;
+    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.login, .labelUsername, .labelPassword, .username, .password {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
+
+}
+
+.buttons2 {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
+}
+
+.login label {
+    padding: 10px;
+    color: white;
+}
+
+.username, .password {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    text-align: center;
+    outline: none;
+    border-bottom: 3px black solid;
+}
+
+.login .buttom {
+    margin-top: 20px;
+    width: 100px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7289da;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+
+.signup h1 {
+    align-items: center;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.signup p {
+    color: white;
+}
+
+.signup a {
+    color: 	#7289da;
+}
+
+.signup {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px white solid;*/
+    width: 70%;
+    height: 750px;
+    flex-flow: column wrap;
+    background-color: #36393e;
+    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.signup .labelFirstname, .firstname, .labelLastname, .lastname, .mail, .labelMail, .labelUsername2, .username2, .labelPassword, .password2, .labelConfirm, .confrimPassword {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+    align-items: center;
+    width: 300px;
+}
+
+.signup label {
+    padding: 10px;
+    color: white;
+}
+
+.firstname,.lastname,.mail,.username2,.password2,.confrimPassword {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    text-align: center;
+    outline: none;
+    border-bottom: 3px black solid;
+}
+
+.signup .buttom2 {
+    margin-top: 20px;
+    width: 150px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7289da;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.showButton {
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    width: 150px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7289da;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.showButton2 {
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    width: 100px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7289da;
+    line-height: 1.15;
+    font-size: 16px;
+}
