@@ -24,7 +24,7 @@ class db{
         if($conn->query("SELECT * FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = '$dbconn[db]'")->rowCount() > 0) {
         $conn = new PDO("mysql:dbname=$dbconn[db];host=$dbconn[servername]", $dbconn["username"], $dbconn["password"]);
         } else {
-            $file = file_get_contents('dbFiles/profileapp.sql', FALSE, NULL);
+            $file = file_get_contents("dbFiles/profileapp.sql", FALSE, NULL);
             $sql = "CREATE DATABASE $dbconn[db]";
             $conn->exec($sql);
             $conn = null;
