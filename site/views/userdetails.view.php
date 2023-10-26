@@ -3,10 +3,7 @@ echo "<h1> Change your personal data </h1>";
 
 
 //edit pagina user view
-
-require 'C:\Users\Ashra\OneDrive\Documenten\GitHub\SL01COL02\chatgpt-portfolio\site\functions\db.php';
-
-var_dump($conn);
+require "../functions/db.php";
 
 ?>
 <!DOCTYPE html>
