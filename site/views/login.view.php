@@ -54,9 +54,9 @@
                 <label for="Mail" class="labelMail">Mail</label>
                 <input type="email" name="Mail" placeholder="E-Mail" id="Mail" required class="mail">
                 <label for="username" class="labelUsername2">Username</label>
-                <input type="text" name="username" placeholder="Username" id="username" required class="username2">
+                <input type="text" name="username" placeholder="Username" id="username_signup" required class="username2">
                 <label for="password" class="labelPassword">Password</label>
-                <input type="password" name="password" placeholder="Password" id="password" required class="password2">
+                <input type="password" name="password" placeholder="Password" id="password_signup" required class="password2">
                 <label for="passwordConfirm" class="labelConfirm">Confirm password</label>
                 <input type="password" name="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" required class="confrimPassword">
                 <div class="buttons2">
@@ -68,26 +68,6 @@
         </div>
     </main>
 </div>
-<script>
-    const Template_Home = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-
-    Template_Home.addEventListener("click", mobileMenu);
-
-    function mobileMenu() {
-        Template_Home.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    }
-
-    function showLoginForm() {
-        document.getElementById('loginForm').style.display = '';
-        document.getElementById('signUpForm').style.display = 'none';
-    }
-    function showSignUpForm() {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('signUpForm').style.display = '';
-    }
-
-</script>
+<script src="../public/js/login.js"></script>
 </body>
 </html>
