@@ -20,9 +20,9 @@ if(array_key_exists($_SERVER['REQUEST_URI'], $routes)) {
     // If the URL exists in the array require the correct controller
     require $routes[$_SERVER['REQUEST_URI']];
 } 
-elseif(str_contains($_SERVER['REQUEST_URI'], "?id")){
+elseif(str_contains($_SERVER['REQUEST_URI'], "?")){
     // If the URL contains '?id' remove it from the URL and require the correct controller
-    $uri = substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], "?id"));
+    $uri = substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], "?"));
     require $routes[$uri];
 }
 else {

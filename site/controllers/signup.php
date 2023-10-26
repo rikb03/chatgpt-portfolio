@@ -1,7 +1,8 @@
 <?php
 
-require 'functions/db.php';
-$db = new db();
+require 'functions/connect.php';
+require 'functions/queryBuilder.php';
+$qb = new QueryBuilder(new Connection());
 
 // Checks if all the required signup fields are filled in
 if ( !isset($_POST['FirstName'], $_POST['LastName'], $_POST['Mail'], $_POST['username'], $_POST['password'], $_POST['passwordConfirm']) ) {
@@ -10,8 +11,7 @@ if ( !isset($_POST['FirstName'], $_POST['LastName'], $_POST['Mail'], $_POST['use
 }
 
 // Tries to find the username in the database
-$sql = "SELECT loginUser FROM pud WHERE loginUser = :username";
-$user = $db->SQLReturnResultWithParams($sql, ':username', $_POST['username']);
+$user = $qb->selectCol('pud', 'loginUser', 'loginUser = "'  . $_POST["username"] . '"');
 
 // If the username is already in the database, redirect to the login page
 if ($user == !null){
@@ -21,28 +21,18 @@ if ($user == !null){
     // If the username is not in the database, check if the passwords match and if so, insert the user data into the database
     if ($_POST['password'] == $_POST['passwordConfirm']){
         try {
-            // Inserts the user data into the database and gets the user id
-            $sql = "INSERT INTO user (firstName, lastName, mail) VALUES (:firstName, :lastName, :mail)";
-            $conn = $db->SQLConnectDB();
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':firstName', $_POST['FirstName']);
-            $stmt->bindParam(':lastName', $_POST['LastName']);
-            $stmt->bindParam(':mail', $_POST['Mail']);
-            $stmt->execute();
-            $user_id = $conn->lastInsertId();
+            $insertArr = ['firstName' => $_POST['FirstName'], 'lastName' => $_POST['LastName'], 'mail' => $_POST['Mail']];
+            $insertUser = $qb->insert('user', $insertArr);
+            // echo "New record in user created successfully.";
             } catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
             }
         try {
             // Hashes the password and inserts the users password, username and id into the database
             $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $sql = "INSERT INTO pud (loginUser, loginPass, user_id) VALUES (:loginUser, :loginPass, :user_id)";
-            $conn = $db->SQLConnectDB();
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':loginUser', $_POST['username']);
-            $stmt->bindParam(':loginPass', $passwordHash);
-            $stmt->bindParam(':user_id', $user_id);
-            $stmt->execute();
+            $insertArr = ['loginUser' => $_POST['username'], 'loginPass' => $passwordHash, 'user_id' => $user_id];
+            $insertPUD = $qb->insert('pud', $insertArr);
+            // echo "New record in pud created successfully.";
             } catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
             }
