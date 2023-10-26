@@ -1,10 +1,13 @@
 <?php
 echo "<h1> Change your personal data </h1>";
-<<<<<<< HEAD
+
 
 //edit pagina user view
-?>
-=======
+
+require 'C:\Users\Ashra\OneDrive\Documenten\GitHub\SL01COL02\chatgpt-portfolio\site\functions\db.php';
+
+var_dump($conn);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,4 +74,4 @@ echo "<h1> Change your personal data </h1>";
 </div>
 </body>
 </html>
->>>>>>> 2c5e970889949d154167b1a0f426536ae8ded278
+<!--2c5e970889949d154167b1a0f426536ae8ded278-->
