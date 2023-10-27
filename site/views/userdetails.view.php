@@ -60,8 +60,20 @@ require "../functions/db.php";
                 </form>
             </div>
             <div class="certificates">
-                <h2>Certificates</h2>
+                <form class="form">
+                    <label>Certificate</label>
+                    <input type="text" name="certificate" placeholder="certificate" id="certificate">
+                    <input type="submit" value="save" class="submit">
+                </form>
                 <form>
+                    <label>Certificate</label>
+                    <input type="text" name="certificate" placeholder="certificate" id="certificate">
+                    <input type="submit" value="save" class="submit">
+                </form>
+                <form>
+                    <label>Certificate</label>
+                    <input type="text" name="certificate" placeholder="certificate" id="certificate">
+                    <input type="submit" value="save" class="submit">
                 </form>
             </div>
         </div>
