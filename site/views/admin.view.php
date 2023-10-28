@@ -6,31 +6,12 @@ echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../public/styles/admin.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <nav class="navbar">
-            <div class="local">
-                <h2>Profile App</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+   <?php require('partials/nav.php'); ?>
     <main>
         <div class="users">
             <h1>Admin</h1>
@@ -85,16 +66,5 @@ echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
         </div>
     </main>
 </div>
-<script>
-    const Template_Home = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-
-    Template_Home.addEventListener("click", mobileMenu);
-
-    function mobileMenu() {
-        Template_Home.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    }
-</script>
 </body>
 </html>
