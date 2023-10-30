@@ -16,8 +16,8 @@
 			<form action="changePass" method="post">
 				<label for="username">Username</label>
 				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="oldPassword">Old Passord</label>
-				<input type="password" name="oldPassword" placeholder="Old password" id="oldPassword" required>
+				<label for="mail">mail</label>
+				<input type="mail" name="mail" placeholder="mail" id="mail" required>
                 <label for="newPassword"> New password</label>
 				<input type="password" name="newPassword" placeholder="New password" id="newPassword" required>
 				<input type="submit" value="Change password" class="button">
