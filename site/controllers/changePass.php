@@ -24,9 +24,9 @@ if ($mail == $_POST['mail'] && !password_verify($_POST['newPassword'], $loginPas
     $update = $qb->update('pud', $updateArr, 'loginUser = "'  . $_POST["username"] . '"');
     // echo "Wachtwoord is veranderd";
     session_destroy();
-    // header("Location: /login");
-    echo 'Gelukt';
+    header("Location: /login");
+    // echo 'Gelukt';
 } else {
-    // header("Location: /changepassword");
-    echo "Wachtwoord is niet veranderd";
+    header("Location: /changepassword");
+    // echo "Wachtwoord is niet veranderd";
 }
