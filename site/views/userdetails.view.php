@@ -46,12 +46,12 @@ require "../functions/db.php";
                     <input type="text" name="certificate" placeholder="certificate" id="certificate">
                     <input type="submit" value="save" class="submit">
                 </form>
-                <form>
+                <form class="form">
                     <label>Certificate</label>
                     <input type="text" name="certificate" placeholder="certificate" id="certificate">
                     <input type="submit" value="save" class="submit">
                 </form>
-                <form>
+                <form class="form">
                     <label>Certificate</label>
                     <input type="text" name="certificate" placeholder="certificate" id="certificate">
                     <input type="submit" value="save" class="submit">

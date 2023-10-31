@@ -124,6 +124,7 @@ h1{
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 330px);
+    background-color: #36393e;
 }
 
 .profilePic {
@@ -186,4 +187,36 @@ h1{
     color: white;
     padding-top: 20px;
     font-size: 25px;
+}
+
+.certificates {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    Padding-top: 70px;
+    color: white;
+}
+
+.form {
+    display: flex;
+    background-color: #1e2124;
+    margin: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.form input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    text-align: center;
+    outline: none;
+    border-bottom: 3px black solid;
+}
+
+.form label {
+    padding: 10px;
+    color: white;
 }
