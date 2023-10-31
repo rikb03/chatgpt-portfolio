@@ -6,7 +6,7 @@ echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="admin.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/admin.css" type="text/css">
 </head>
 <body>
 
