@@ -3,6 +3,8 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="../public/styles/main.css">
+    <link rel="stylesheet" href="../public/styles/nav.css">
+    <link rel="stylesheet" href="../public/styles/home.css">
 </head>
 <body>
 <div class="container">

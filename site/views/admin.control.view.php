@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <title>Edit User</title>
+    <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/changeUserSettings.css" type="text/css">
 </head>
 <body>

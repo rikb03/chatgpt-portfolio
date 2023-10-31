@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/login.css" type="text/css">
-    <link rel="stylesheet" href="../public/styles/teststyle.css" type="text/css">
 </head>
 <body>
 <div class="container">
