@@ -1,5 +1,5 @@
 <?php
-echo "<h1> Change your personal data </h1>";
+//echo "<h1> Change your personal data </h1>";
 
 
 //edit pagina user view
@@ -11,6 +11,8 @@ require "../functions/db.php";
 <head>
     <meta charset="UTF-8">
     <title>UserDetails</title>
+    <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/userDetails.css" type="text/css">
 </head>
 <body>

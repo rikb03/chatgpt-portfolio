@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Change password</title>
+    <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/forgotPassword.css" type="text/css">
 </head>
 <body>
