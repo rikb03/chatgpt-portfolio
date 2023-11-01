@@ -23,6 +23,11 @@ require "functions/db.php";
             <div class="profilePic">
                 <img src="../public/images/avatar.png" alt="avatar" class="avatar">
                 <h2>Profile pic</h2>
+                <form action="upload" method="post" enctype="multipart/form-data">
+                    Select Image File to Upload:
+                    <input type="file" name="file">
+                    <input type="submit" name="submit" value="Upload">
+                </form>
             </div>
             <div class="userData">
                 <h2>User Data</h2>
@@ -37,8 +42,8 @@ require "functions/db.php";
                     <input type="text" name="phone" placeholder="Phone number" id="phone">
                     <label for="birth">Date of birth</label>
                     <input type="date" id="birth" name="birth">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" placeholder="Password" id="password" required>
+<!--                    <label for="password">Password</label>-->
+<!--                    <input type="password" name="password" placeholder="Password" id="password" required>-->
                     <input type="submit" value="save" class="submit">
                 </form>
             </div>
