@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <head> 
     <link rel='stylesheet' href='public/styles/main.css'>
+    <link rel='stylesheet' href='public/styles/home.css'>
+    <link rel='stylesheet' href='public/styles/nav.css'>
 </head>
 <body>
     <div class="container">
