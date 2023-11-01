@@ -22,7 +22,7 @@
                 <input type="password" name="password" placeholder="Password" id="password" required class="password">
                 <p id ='errorLogin' class='error' style='display:none'></p>
                 <div class="buttons">
-                    <input type="submit" value="Login" class="buttom">
+                    <input type="submit" value="Login" class="button">
                     <button onclick="showSignUpForm()" class="showButton" type="button">Sign-Up</button>
                 </div>
             </form>
@@ -30,7 +30,7 @@
         </div>
         <div class="signup" id="signUpForm" style="display: none;">
             <h1>Sign-Up</h1>
-            <form action="signup" method="post">
+            <form action="signup" method="post" class="form">
                 <input type="hidden" name="method" value="signup">
                 <label for="FirstName" class="labelFirstname">Firstname</label>
                 <input type="text" name="FirstName" placeholder="FirstName" id="FirstName" required class="firstname">
@@ -43,10 +43,10 @@
                 <label for="password" class="labelPassword2">Password</label>
                 <input type="password" name="password" placeholder="Password" id="password_signup" required class="password2">
                 <label for="passwordConfirm" class="labelConfirm">Confirm password</label>
-                <input type="password" name="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" required class="confrimPassword">
+                <input type="password" name="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" required class="confirmPassword">
                 <p id ='errorSignup' class='error' style='display:none'></p>
                 <div class="buttons2">
-                    <input type="submit" value="Sign up" class="buttom2">
+                    <input type="submit" value="Sign up" class="button2">
                     <button onclick="showLoginForm()" class="showButton2" type="button">Login</button>
                 </div>
             </form>
