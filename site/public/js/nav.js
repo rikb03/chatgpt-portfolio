@@ -8,11 +8,15 @@ function mobileMenu() {
     navMenu.classList.toggle("active");
 }
 
-function toggleLoginLink(){
+function toggleLoginLink(naam){
     const loginLink = document.getElementById("LoginLink");
 
     if (loginLink.textContent === "Login"){
         loginLink.textContent = "Logout";
         loginLink.href = "/logout";
+        const li = document.createElement("li");
+        li.classList.add("nav-item");
+        li.innerHTML = '<a id="name" href="/edit" class="nav-link">' + naam + '</a>';
+        document.getElementById('nav-ul').appendChild(li);
     }
 }

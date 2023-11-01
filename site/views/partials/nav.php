@@ -3,7 +3,7 @@
         <div class="local">
             <h2><a href="/" class="nav-link">Profile App</a></h2>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-ul">
             <li class="nav-item">
                 <a href="/" class="nav-link">Home</a>
             </li>
@@ -21,12 +21,8 @@
 </header>
 
 <?php
-require 'functions/connect.php';
-require 'functions/querybuilder.php';
-
-$qb = new querybuilder(new Connection());
 session_start();
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "<script type='text/javascript'>toggleLoginLink();</script>";
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+    echo "<script type='text/javascript'>toggleLoginLink('".$_SESSION['naam']."');</script>";
 }
