@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <head> 
+    <title> Profile App - <?= $personalData[0]["Naam"]?></title>
     <link rel='stylesheet' href='public/styles/main.css'>
     <link rel='stylesheet' href='public/styles/details.css'>
     <link rel='stylesheet' href='public/styles/nav.css'>
@@ -22,7 +23,12 @@
                     <h1> Certificates </h1>
                     <div class="detail">
                         <ul class="certificates">
-                            <?php foreach($certificateData as $certificate){echo "<li><p>".$certificate["Diploma"]."</p><p>".$certificate["Gestopt"]."</p></li>";}?>
+                            <?php foreach($dataSchool as $school){echo 
+                                "<li>
+                                    <p>".$school["Diploma"]."</p> 
+                                    <p>".$school["Behaald"]."</p>
+                                </li>";}?>
+                            <!-- <?php foreach($certificateData as $certificate){echo "<li><p>".$certificate["Diploma"]."</p><p>".$certificate["Gestopt"]."</p></li>";}?> -->
                             <!-- TO DO: On click: Show alle info over diploma (Alle school info en jaren dat je er was)-->
                         </ul> 
                     </div>

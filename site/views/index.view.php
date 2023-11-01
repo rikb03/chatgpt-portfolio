@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <head> 
+    <title> Profile App </title>
     <link rel='stylesheet' href='public/styles/main.css'>
     <link rel='stylesheet' href='public/styles/home.css'>
     <link rel='stylesheet' href='public/styles/nav.css'>

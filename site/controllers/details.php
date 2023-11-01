@@ -15,7 +15,11 @@ $schoolData = $qb->customQuery($querySchool);
 $certificateData = $qb->customQuery($queryCertificates);
 $jobData = $qb->customQuery($queryJobs);
 $hobbyData = $qb->customQuery($queryHobbies);
+
+$schoolQuery = "SELECT user_id AS ID, concat(firstName, ' ', lastName) AS Naam,schoolName AS School, schoolCity AS Stad, certificateName AS Diploma,YEAR(certificateDateStart) AS Begonnen,YEAR(certificateDateFinished) AS Behaald 
+FROM education e JOIN certificate c ON c.education_id = e.id JOIN user u on u.id = e.user_id WHERE certificateObtained = 1 AND u.id =".$id;
+$dataSchool = $qb->customQuery($schoolQuery);
+// Deze Query werkt en geeft maar 1 result per education! Nu alleen nog de rest fixen 😰
 require 'views/details.view.php';
 
-// TO DO: SQL Code verbeteren, zorgen dat er geen dubbele results komen
 ?>
