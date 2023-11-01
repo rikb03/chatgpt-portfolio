@@ -1,16 +1,47 @@
-<?php
-require "functions/db.php";
-echo "<head><link rel='stylesheet' href='public/styles/main.css'></head>";
-$db = new db;
-echo "<div class='container'>";
-require 'views/partials/nav.php';
-echo "<main><h1> Welkom </h1> <p> Dit zijn onze mensen </p>";
-$users = $db->SQLReturnResult("SELECT id, concat(firstname, ' ', lastName) AS Naam, profilePic AS pfp FROM user");
-for($c = 0; $c < 2; $c++){ //Change to first 4 users
-    echo "<div><a href='details?id=".$users[$c]["id"]."'><img class='mainUsers' src='".$users[$c]["pfp"]."'></a><br>". $users[$c]["Naam"] . "</div>";
-}
-for($c = 4; $c < count($users); $c++){ //Change to every other user
-    echo "<a href='details?id=".$users[$c]["id"]."'><img class='subUsers' src='".$users[$c]["pfp"]."'></a><br>". $users[$c]["Naam"] . "<br>";
-}
-echo "</main></div>";
-?>
+<!DOCTYPE HTML>
+<head> 
+    <link rel='stylesheet' href='public/styles/main.css'>
+</head>
+<body>
+    <div class="container">
+        <?php require('partials/nav.php'); ?>
+        <main>
+            <aside>
+                <div class="post">
+                    <h1>Welcome!</h1>
+                    <p>Placeholder welcome message</p>
+                </div>
+            </aside>    
+            <section class="team">
+                <?php for($t = 0; $t < 4; $t++){ echo
+                "<a href='details?id=".$users[$t]['ID']."'>
+                    <article class='teamMember'>
+                            <div>
+                                <img class='avatar' src='".$users[$t]['Profielfoto']."'>
+                            </div>
+                            <div>
+                                <h2>".$users[$t]['Naam']."</h2>
+                                <p>".$users[$t]['Beschrijving']."</p>
+                            </div>
+                    </article>
+                </a>";
+                }?>
+            </section>
+            <section class="users">
+                <?php for($u = 4; $u < count($users); $u++){ echo
+                "<a href='details?id=".$users[$u]['ID']."'>
+                    <article class='user'>
+                            <div>
+                                <img class='userAvatar' src='".$users[$u]['Profielfoto']."'>
+                            </div>
+                            <div>
+                                <h3>".$users[$u]['Naam']."</h3> <br>
+                                <p>".$users[$u]['Beschrijving']."</p>
+                            </div>
+                    </article>
+                </a>";
+                }?>
+            </section>
+        </main>
+    </div>
+</body>
