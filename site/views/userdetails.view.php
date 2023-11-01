@@ -3,7 +3,7 @@
 
 
 //edit pagina user view
-require "../functions/db.php";
+require "functions/db.php";
 
 ?>
 <!DOCTYPE html>

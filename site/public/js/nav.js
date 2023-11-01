@@ -7,3 +7,12 @@ function mobileMenu() {
     Template_Home.classList.toggle("active");
     navMenu.classList.toggle("active");
 }
+
+function toggleLoginLink(){
+    const loginLink = document.getElementById("LoginLink");
+
+    if (loginLink.textContent === "Login"){
+        loginLink.textContent = "Logout";
+        loginLink.href = "/logout";
+    }
+}
