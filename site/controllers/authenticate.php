@@ -26,7 +26,7 @@ if ($results == !NULL) {
         $_SESSION['id'] = $results[0]['user_id'];
         // echo 'Wachtwoord correct';
         $_SESSION['error'] = FALSE;
-        header ('Location: /');
+        header ('Location: /login');
     } else {
         // Sets the error message and redirects to the login page
         // echo "Wachtwoord of gebruikersnaam klopt niet";
