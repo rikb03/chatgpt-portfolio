@@ -3,7 +3,7 @@
         <header>
             <nav class="navbar">
                 <div class="local">
-                    <h2>Profile App</h2>
+                    <h2><a href="/" class="nav-link">Profile App</a></h2>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">

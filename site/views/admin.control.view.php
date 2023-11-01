@@ -1,19 +1,11 @@
-<?php
-//echo "<h1> Change your personal data </h1>";
-
-
-//edit pagina user view
-require "../functions/db.php";
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UserDetails</title>
+    <title>Edit User</title>
     <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
-    <link rel="stylesheet" href="../public/styles/userDetails.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/changeUserSettings.css" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -25,7 +17,7 @@ require "../functions/db.php";
                 <h2>Profile pic</h2>
             </div>
             <div class="userData">
-                <h2>User Data</h2>
+                <h2>Change user Data</h2>
                 <form class="formData">
                     <label for="firstname">Firstname</label>
                     <input type="text" name="firstname" placeholder="Firstname" id="lastname">
@@ -66,4 +58,3 @@ require "../functions/db.php";
 </div>
 </body>
 </html>
-<!--2c5e970889949d154167b1a0f426536ae8ded278-->
