@@ -10,7 +10,7 @@
                         <a href="/" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/login" class="nav-link">Login</a>
+                        <a id="LoginLink" href="/login" class="nav-link">Login</a>
                     </li>
                 </ul>
                 <div class="hamburger">
