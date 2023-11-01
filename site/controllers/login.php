@@ -5,6 +5,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     unset($_SESSION['error']);
     unset($_SESSION['method']);
     header('Location: /');
+    exit();
 } else {
     // If the user is not logged in show the login page
     require 'views/login.view.php';
