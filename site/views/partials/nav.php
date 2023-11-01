@@ -21,8 +21,11 @@
 </header>
 
 <?php
+// Checks if the session is started, if not, start it
+if (session_status() != 2){
 session_start();
-
+}
+// If the user is logged in, change the login link to a logout link
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo "<script type='text/javascript'>toggleLoginLink('".$_SESSION['naam']."');</script>";
 }
