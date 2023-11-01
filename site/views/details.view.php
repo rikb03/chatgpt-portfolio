@@ -1,13 +1,15 @@
-<?php
-require 'functions/db.php';
-echo "<head><link rel='stylesheet' href='public/styles/mainstyle.css'></head>";
-require 'views/partials/nav.php';
-echo "<h1> Profile </h1>";
-$id = $_GET["id"];
-$db = new db;
-$query = "SELECT user.id, concat(firstName, ' ', lastName) AS Naam, description AS Beschrijving FROM user WHERE id = :id";
-$result = $db->SQLReturnResultWithParams($query, ":id", $id);
-foreach($result as $user){
-    echo $user["Naam"] . "<br>" . $user["Beschrijving"];
-}
-?>
+<!DOCTYPE HTML>
+<head> 
+    <link rel='stylesheet' href='public/styles/main.css'>
+</head>
+<body>
+    <div class="container">
+        <?php require('partials/nav.php'); ?>
+        <main>
+            <?php foreach($users as $user){
+                echo "Hello I am ". $user['Naam'];
+                }
+                ?>
+        </main>
+    </div>
+</body>
