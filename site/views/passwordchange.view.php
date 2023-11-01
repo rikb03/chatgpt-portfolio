@@ -28,6 +28,6 @@
         </div>
 </main>
 		</div>
-		<script src="../public/js/passwordchange.js"></script>
+		<script src="../public/js/error.js"></script>
 	</body>
 </html>

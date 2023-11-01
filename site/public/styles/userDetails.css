@@ -115,3 +115,9 @@ h1{
     padding: 10px;
     color: white;
 }
+
+.error {
+    color: red;
+    text-align: center;
+    padding: 10px;
+}

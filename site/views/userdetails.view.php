@@ -28,6 +28,7 @@ require "functions/db.php";
                     <input type="file" name="file">
                     <input type="submit" name="submit" value="Upload">
                 </form>
+                <p id ='error' class='error' style='display:none'></p>
             </div>
             <div class="userData">
                 <h2>User Data</h2>
@@ -69,6 +70,7 @@ require "functions/db.php";
     <aside>
     </aside>
 </div>
+<script src="../public/js/error.js"></script>
 </body>
 </html>
 <!--2c5e970889949d154167b1a0f426536ae8ded278-->

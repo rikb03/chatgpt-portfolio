@@ -55,5 +55,6 @@
     </main>
 </div>
 <script src="../public/js/login.js"></script>
+<script src="../public/js/error.js"></script>
 </body>
 </html>
