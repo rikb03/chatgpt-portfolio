@@ -2,6 +2,8 @@
 //echo "<h1> Change your personal data </h1>";
 
 
+
+
 //edit pagina user view
 require "functions/db.php";
 
@@ -34,7 +36,7 @@ require "functions/db.php";
                 <h2>User Data</h2>
                 <form class="formData">
                     <label for="firstname">Firstname</label>
-                    <input type="text" name="firstname" placeholder="Firstname" id="lastname">
+                    <input type="text" value="<?php echo($_SESSION["naam"]); ?>" name="firstname" placeholder="Firstname" id="lastname">
                     <label for="lastname">Lastname</label>
                     <input type="text" name="lastname" placeholder="Lastname" id="lastname">
                     <label for="mail">Email</label>
@@ -55,13 +57,13 @@ require "functions/db.php";
                     <input type="submit" value="save" class="submit">
                 </form>
                 <form class="form">
-                    <label>Certificate</label>
-                    <input type="text" name="certificate" placeholder="certificate" id="certificate">
+                    <label>Experience</label>
+                    <input type="text" name="Experience" placeholder="Experience" id="Experience">
                     <input type="submit" value="save" class="submit">
                 </form>
                 <form class="form">
-                    <label>Certificate</label>
-                    <input type="text" name="certificate" placeholder="certificate" id="certificate">
+                    <label>Hobbies</label>
+                    <input type="text" name="Hobbies" placeholder="Hobbies" id="Hobbies">
                     <input type="submit" value="save" class="submit">
                 </form>
             </div>
