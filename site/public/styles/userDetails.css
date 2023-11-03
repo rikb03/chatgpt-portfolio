@@ -164,3 +164,8 @@ h1{
 .uploadFile:hover::before {
     border: 1px solid black;
 }
+
+select {
+
+    width: 200px;
+}
