@@ -20,7 +20,7 @@
                 "<a href='details?id=".$users[$t]['ID']."'>
                     <article class='teamMember'>
                             <div>
-                                <img class='avatar' src='".$users[$t]['Profielfoto']."'>
+                                <img class='avatar' src='".(file_exists($users[$t]['Profielfoto']) ? $users[$t]['Profielfoto'] : "public/images/defaultProfilePic.jpg")."'>
                             </div>
                             <div>
                                 <h2>".$users[$t]['Naam']."</h2>
