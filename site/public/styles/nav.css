@@ -72,3 +72,9 @@ header h2{
 .nav-item {
     font-size: 1em;
 }
+
+img {
+    margin-top: 40px;
+    height: 80px;
+    width: 120px;
+}

@@ -1,14 +1,9 @@
-<head>
-    <link rel="icon" href="../views/partials/favicon.png">
-</head>
 <header>
     <nav class="navbar">
         <div class="local">
-            <h2><a href="/" class="nav-link"><img style="    margin-top: 40px;
-    height: 80px;
-    width: 120px;" src="../views/partials/img.png" alt="Beschrijvende tekst">
+            <h2><a href="/" class="nav-link">
+                <img src="../public/images/logo.png" alt="Beschrijvende tekst">
                 </a></h2>
-
         </div>
         <ul class="nav-menu" id="nav-ul">
             <li class="nav-item">
