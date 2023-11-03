@@ -61,24 +61,22 @@
 
                     <?php
 
-
-                    if (empty($currentUserCertificates[0])) {
+                    if (empty($currentUserCertificate[0]["certificateName"])) {
                     } else {
 
 
                     ?>
 
 
-                    <select name="jobTitle" id="mySelectCertificates" onchange="updateTextFieldCertificates()">
+                    <select name="jobTitle" id="mySelectCertificate" onchange="updateTextFieldCertificates()">
                         <?php
                         // Stel mogelijke jobtitels in
-                        $mogelijkeJobTitels = array($currentUserCertificates[0]['jobTitle']);
+                        $mogelijkeJobTitels = array($currentUserCertificate[0]['certificateName']);
 
                         // Loop door de mogelijke jobtitels
                         foreach ($mogelijkeJobTitels as $jobTitel) {
                             // Controleer of de huidige jobtitel overeenkomt met de geselecteerde waarde
-                            $isSelected = ($jobTitel == $currentUserertificates[0]['jobTitle']) ? 'selected' : '';
-
+                            $isSelected = ($jobTitel == $currentUserCertificate[0]["certificateName"]) ? 'selected' : '';
                             // Geef de optie weer
                             echo "<option value=\"$jobTitel\" $isSelected>$jobTitel</option>";
                         }
@@ -173,6 +171,7 @@
                         ?>
                     </select>
 
+                    <input type="hidden" name="methodHobbby" value="userDataHobby">
 
                     <!--<input type="text" value="" name="Experience" placeholder="Experience" id="Experience">-->
                     <!--                    <input type="hidden" name="method" value="experience">-->
@@ -201,11 +200,7 @@
 </html>
 
 <?php
-
-
-
-
-
+var_dump($currentUserCertificate[0]["certificateName"]);
 
 ?>
 <script>
@@ -219,7 +214,7 @@
 
 
     function updateTextFieldCertificates() {
-        var selectElementCertificates = document.getElementById("mySelectCertificates");
+        var selectElementCertificates = document.getElementById("mySelectCertificate");
         var textFieldCertificates = document.getElementById("myTextFieldCertificates");
 
         // Bijwerken van het tekstveld met de waarde van de geselecteerde optie

@@ -14,6 +14,14 @@ class updateData {
         if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
         } else {header('Location: /edit');}
     }
+
+    function updateUserDataHobby($updateArr, $userId){
+        unset ($updateArr['methodHobbby']);
+        $succes = $this->qb()->update('hobby', $updateArr, 'id='.$userId);
+        if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
+        } else {header('Location: /edit');}
+    }
+
     function add($table, $addArr) {
         $succes = $this->qb()->insert($table, $addArr);
         if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
@@ -27,6 +35,14 @@ class updateData {
     function update($table, $updateArr, $userId) {
         $_POST['method'] = $updateArr['method'];
         unset ($updateArr['method']);
+        $succes = $this->qb()->update($table, $updateArr, 'id='.$userId);
+        if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
+        } else {header('Location: /edit');}
+    }
+
+    function updateHobby($table, $updateArr, $userId) {
+        $_POST['methodHobbby'] = $updateArr['methodHobbby'];
+        unset ($updateArr['methodHobbby']);
         $succes = $this->qb()->update($table, $updateArr, 'id='.$userId);
         if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
         } else {header('Location: /edit');}
