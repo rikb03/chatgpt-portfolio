@@ -10,8 +10,8 @@ if (!isset($_SESSION['loggedin'])) {
     $_POST['method'] = 'edit';
     errorMessage("You are not logged in", 'login');
 }
-
 //start code om één gebruiker op te halen
+
 $currentUser = $qb->select('user', 'id='.$_SESSION['userid']);
 
 // Controleer of de gebruikersnaam is opgeslagen in de sessie

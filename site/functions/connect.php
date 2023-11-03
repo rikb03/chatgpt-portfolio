@@ -12,7 +12,8 @@ class Connection
         $dbconn = $app['database'];
         return $dbconn;
     }
-    function __construct() {  
+    function __construct() {
+
         try {
             $dbconn = $this->getDBParams();
             $this->conn = new PDO("mysql:host=$dbconn[servername]", $dbconn['username'], $dbconn['password']);
