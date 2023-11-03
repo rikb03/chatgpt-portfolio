@@ -19,6 +19,23 @@ $currentUser = $qb->select('user', 'id='.$_SESSION['userid']);
 
 //einde code om één gebruiker op te halen
 
+
+//start code om alle Experiences op te halen van één persson
+
+$currentUserExperience = $qb->select('experience', 'id='.$_SESSION['userid']);
+
+//start code om alle Hobbies op te halen van één persson
+
+
+$currentUserHobby = $qb->select('hobby', 'id='.$_SESSION['userid']);
+
+//start code om alle certificate op te halen van één persson
+
+
+$currentUserCertificate = $qb->select('certificate', 'id='.$_SESSION['userid']);
+
+//einde code om één gebruiker op te halen
+
 require 'views/userdetails.view.php';
 
 if (isset($_SESSION['error']) && $_SESSION['error']) {

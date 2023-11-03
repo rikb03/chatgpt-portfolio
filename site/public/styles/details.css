@@ -44,6 +44,7 @@ section {
     height: 250px;
     width: 250px;
     border-radius: 50%;
+    object-fit: cover; 
 }
 
 .details {
@@ -61,7 +62,14 @@ section {
     height: 300px;
     width: 250px;
     border: 1px solid black;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+.detail::-webkit-scrollbar, .description::-webkit-scrollbar{
+    display: none;
+  }
 
 .detail ul li {
     padding: 5px;
@@ -70,6 +78,16 @@ section {
     margin-bottom: -5px;
     border-radius: 5px;
     list-style-type: none;
+    transition: 0.4s;
+}
+
+.detail ul li:hover {
+    background-color: #1e2124;
+    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.detail ul li p {
+    padding: 2px;
 }
 
 .certificates li {
