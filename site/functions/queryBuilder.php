@@ -63,6 +63,12 @@ class QueryBuilder
         }
     }
 
+
+
+
+
+
+
     /** Method selectCol
      * SELECT based on table, columns and condition provided
      * */

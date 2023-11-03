@@ -6,12 +6,12 @@ require 'functions/connect.php';
 require 'functions/queryBuilder.php';
 
 $qb = new QueryBuilder(new Connection());
-
 //start code om één gebruiker op te halen
 
-
+$results = $qb->selectCol('user', 'lastname');
+$results->FetchALL();
+var_dump($results);
 // Controleer of de gebruikersnaam is opgeslagen in de sessie
-
 
 
 

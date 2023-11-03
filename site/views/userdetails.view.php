@@ -38,7 +38,7 @@ require "functions/db.php";
                     <label for="firstname">Firstname</label>
                     <input type="text" value="<?php echo($_SESSION["naam"]); ?>" name="firstname" placeholder="Firstname" id="lastname">
                     <label for="lastname">Lastname</label>
-                    <input type="text" name="lastname" placeholder="Lastname" id="lastname">
+                    <input type="text" value="<?php echo($_SESSION["naam"]); ?>" name="lastname" placeholder="Lastname" id="lastname">
                     <label for="mail">Email</label>
                     <input type="text" name="mail" placeholder="Email" id="mail">
                     <label for="phone">Phone number</label>
