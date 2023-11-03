@@ -1,3 +1,7 @@
+<head>
+    <link rel="icon" type="image/png" href="../views/partials/favicon.png">
+</head>
+
 <?php
 /**
  * Created by: Stephan Hoeksema 2023
