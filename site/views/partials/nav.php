@@ -1,7 +1,14 @@
+<head>
+    <link rel="icon" href="../views/partials/favicon.png">
+</head>
 <header>
     <nav class="navbar">
         <div class="local">
-            <h2><a href="/" class="nav-link">Profile App</a></h2>
+            <h2><a href="/" class="nav-link"><img style="    margin-top: 40px;
+    height: 80px;
+    width: 120px;" src="../views/partials/img.png" alt="Beschrijvende tekst">
+                </a></h2>
+
         </div>
         <ul class="nav-menu" id="nav-ul">
             <li class="nav-item">
@@ -17,15 +24,16 @@
             <span class="bar"></span>
         </div>
     </nav>
-    <script src="../public/js/nav.js"></script> 
+    <script src="../public/js/nav.js"></script>
 </header>
 
 <?php
 // Checks if the session is started, if not, start it
-if (session_status() != 2){
-session_start();
+if (session_status() != 2) {
+    session_start();
 }
 // If the user is logged in, change the login link to a logout link
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-    echo "<script type='text/javascript'>toggleLoginLink('".$_SESSION['naam']."');</script>";
+    echo "<script type='text/javascript'>toggleLoginLink('" . $_SESSION['naam'] . "');</script>";
 }
+?>

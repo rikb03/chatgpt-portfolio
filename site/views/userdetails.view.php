@@ -19,7 +19,7 @@
                 <form action="upload" method="post" enctype="multipart/form-data" class="upload">
                     <input type="file" name="file" class="uploadFile">
                     <input type="submit" name="submit" value="Upload">
-                    <input type="hidden" name="method" value="upload">
+                     <input type="hidden" name="method" value="upload">
                 </form>
                 <p id='error' class='errorUpload' style='display:none'></p>
             </div>
@@ -200,7 +200,6 @@
 </html>
 
 <?php
-var_dump($currentUserCertificate[0]["certificateName"]);
 
 ?>
 <script>
