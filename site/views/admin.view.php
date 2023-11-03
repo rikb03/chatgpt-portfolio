@@ -20,11 +20,12 @@
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
                 <div class="list-container">
                 <ul class="horizontal-list" id="myUL">
-                    <?php for($u = 4; $u < count($users); $u++){ echo
-                        "<li><a href='edit?id=".$users[$u]['ID']."'>
+                    <?php for($u = 4; $u < count($users); $u++){ echo // Start a for loop to iterate through user data
+                        "<li>
+                            <a href='edit?id=".$users[$u]['ID']."'>
                             <article class='user'>
                             <div>
-                                <h3>".$users[$u]['Naam']."</h3> <br>
+                                <h3>".$users[$u]['Naam']."</h3> <br> 
                             </div>
                     </article>
                 </a></li>";

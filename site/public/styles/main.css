@@ -6,9 +6,21 @@
     box-sizing: border-box;
 }
 
+/*Change font family and backgroud color of the body*/
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #424549;
+}
+
+
+/*Creating container for the whole page and adjusting the grid layout*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 100px auto auto 100px;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .container nav {
@@ -16,14 +28,5 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    margin: 0 auto;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 100px auto auto 100px;
-    height: 100vh;
-    width: 100%;
     margin: 0 auto;
 }
