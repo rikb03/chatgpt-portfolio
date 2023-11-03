@@ -48,6 +48,22 @@ $dataSchool = $qb->customQuery($schoolQuery);
 $gradesQuery = "SELECT g.subject AS Vak, grade AS Cijfer FROM grades g WHERE g.certificate_education_user_id =" . $id;;
 $dataGrades = $qb->customQuery($gradesQuery);
 
+$query = 
+"SELECT e.schoolName, c.certificateName 
+FROM education e 
+JOIN certificate c 
+    ON c.education_id = e.id 
+WHERE e.user_id = 1";
+
+$query2 = 
+"SELECT c.certificateName, g.subject, g.grade 
+FROM certificate c 
+JOIN grades g 
+    ON g.certificate_id = c.id 
+WHERE c.education_user_id = 1
+    AND c.education_id = 1";
+
+
 // print("<pre>".print_r($dataCertificate,true)."</pre>");
 
 // Deze Query werkt en geeft maar 1 result per education! Nu alleen nog de rest fixen 😰

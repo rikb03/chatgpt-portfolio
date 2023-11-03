@@ -1,6 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="../views/partials/favicon.png"></head>
 <header>
     <nav class="navbar">
         <div class="local">
