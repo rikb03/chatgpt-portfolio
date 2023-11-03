@@ -19,7 +19,7 @@
                 <form action="upload" method="post" enctype="multipart/form-data" class="upload">
                     <input type="file" name="file" class="uploadFile">
                     <input type="submit" name="submit" value="Upload">
-                    <input type="hidden" name="method" value="upload">
+                     <input type="hidden" name="method" value="upload">
                 </form>
                 <p id='error' class='errorUpload' style='display:none'></p>
             </div>
@@ -61,24 +61,22 @@
 
                     <?php
 
-
-                    if (empty($currentUserCertificates[0])) {
+                    if (empty($currentUserCertificate[0]["certificateName"])) {
                     } else {
 
 
                     ?>
 
 
-                    <select name="jobTitle" id="mySelectCertificates" onchange="updateTextFieldCertificates()">
+                    <select name="jobTitle" id="mySelectCertificate" onchange="updateTextFieldCertificates()">
                         <?php
                         // Stel mogelijke jobtitels in
-                        $mogelijkeJobTitels = array($currentUserCertificates[0]['jobTitle']);
+                        $mogelijkeJobTitels = array($currentUserCertificate[0]['certificateName']);
 
                         // Loop door de mogelijke jobtitels
                         foreach ($mogelijkeJobTitels as $jobTitel) {
                             // Controleer of de huidige jobtitel overeenkomt met de geselecteerde waarde
-                            $isSelected = ($jobTitel == $currentUserertificates[0]['jobTitle']) ? 'selected' : '';
-
+                            $isSelected = ($jobTitel == $currentUserCertificate[0]["certificateName"]) ? 'selected' : '';
                             // Geef de optie weer
                             echo "<option value=\"$jobTitel\" $isSelected>$jobTitel</option>";
                         }
@@ -173,6 +171,7 @@
                         ?>
                     </select>
 
+                    <input type="hidden" name="methodHobbby" value="userDataHobby">
 
                     <!--<input type="text" value="" name="Experience" placeholder="Experience" id="Experience">-->
                     <!--                    <input type="hidden" name="method" value="experience">-->
@@ -202,11 +201,6 @@
 
 <?php
 
-
-
-
-
-
 ?>
 <script>
     function updateTextFieldExperience() {
@@ -219,7 +213,7 @@
 
 
     function updateTextFieldCertificates() {
-        var selectElementCertificates = document.getElementById("mySelectCertificates");
+        var selectElementCertificates = document.getElementById("mySelectCertificate");
         var textFieldCertificates = document.getElementById("myTextFieldCertificates");
 
         // Bijwerken van het tekstveld met de waarde van de geselecteerde optie
