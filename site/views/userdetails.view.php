@@ -13,7 +13,7 @@
     <main>
         <div class="wrapper">
             <div class="profilePic">
-                <img src="<?=$currentUser[0]['profilePic'];?>" alt="avatar" class="avatar">
+                <img src="<?=(file_exists($currentUser[0]['profilePic'])) ? $currentUser[0]['profilePic'] : "public/images/defaultProfilePic.jpg";?>" alt="avatar" class="avatar">
                 <h2 class="h2pf">Profile pic</h2>
                 <form action="upload" method="post" enctype="multipart/form-data" class="upload">
                     <input type="file" name="file" class="uploadFile">
@@ -30,9 +30,9 @@
                     <label for="lastname">Lastname</label>
                     <input type="text" value="<?=$currentUser[0]['lastName'];?>" name="lastName" placeholder="Lastname" id="lastname" required>
                     <label for="mail">Email</label>
-                    <input type="text" value="<?=$currentUser[0]['mail'];?>" name="mail" placeholder="Email" id="mail" required>
+                    <input type="email" value="<?=$currentUser[0]['mail'];?>" name="mail" placeholder="Email" id="mail" required>
                     <label for="phone">Phone number</label>
-                    <input type="text" value="<?php if(!is_null($currentUser[0]['phone'])){echo $currentUser[0]['phone'];}?>" name="phone" placeholder="Phone number" id="phone">
+                    <input type="tell" value="<?php if(!is_null($currentUser[0]['phone'])){echo $currentUser[0]['phone'];}?>" name="phone" placeholder="Phone number" id="phone">
                     <label for="dob">Date of birth</label>
                     <input type="date" value="<?php if(!is_null($currentUser[0]['dob'])){echo $currentUser[0]['dob'];}?>" id="dob" name="dob">
 <!--                    <label for="password">Password</label>-->
