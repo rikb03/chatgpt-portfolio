@@ -4,27 +4,20 @@ session_start();
 require 'functions/errorMessage.php';
 require 'functions/connect.php';
 require 'functions/queryBuilder.php';
-
 $qb = new QueryBuilder(new Connection());
-
-//start code om één gebruiker op te halen
-$currentUser = $qb->select('user', 'id='.$_SESSION['userid']);
-
-// Controleer of de gebruikersnaam is opgeslagen in de sessie
-// print("<pre>".print_r($currentUser,true)."</pre>");
-
-
-
-
-
-//einde code om één gebruiker op te halen
-
-
 
 if (!isset($_SESSION['loggedin'])) {
     $_POST['method'] = 'edit';
     errorMessage("You are not logged in", 'login');
 }
+//start code om één gebruiker op te halen
+
+$currentUser = $qb->select('user', 'id='.$_SESSION['userid']);
+
+// Controleer of de gebruikersnaam is opgeslagen in de sessie
+// print("<pre>".print_r($currentUser,true)."</pre>");
+
+//einde code om één gebruiker op te halen
 
 require 'views/userdetails.view.php';
 
