@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.11.4-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: profileapp
+-- Host: localhost    Database: profileapp_new
 -- ------------------------------------------------------
 -- Server version	10.11.4-MariaDB-1~deb12u1
 
@@ -44,14 +44,14 @@ CREATE TABLE `certificate` (
 LOCK TABLES `certificate` WRITE;
 /*!40000 ALTER TABLE `certificate` DISABLE KEYS */;
 INSERT INTO `certificate` VALUES
-(1,1,1,'ICT Beheer',NULL,NULL,1),
-(2,2,1,'ADSD',NULL,NULL,0),
-(3,3,2,'ADSD',NULL,NULL,0),
-(4,4,3,'ADSD',NULL,NULL,0),
-(5,5,4,'ADSD',NULL,NULL,0),
-(6,6,5,'Zingen',NULL,NULL,1),
-(7,7,6,'Zingen',NULL,NULL,1),
-(8,8,7,'Zingen',NULL,NULL,1);
+(1,1,1,'ICT Beheer','2019-08-19','2023-07-22',1),
+(2,2,1,'ADSD','2023-10-04',NULL,0),
+(3,3,2,'ADSD','2023-10-04',NULL,0),
+(4,4,3,'ADSD','2023-10-04',NULL,0),
+(5,5,4,'ADSD','2023-10-04',NULL,0),
+(6,6,5,'Zingen','1987-10-01','1990-07-15',1),
+(7,7,6,'Zingen','1987-10-01','1990-07-15',1),
+(8,8,7,'Zingen','1987-10-01','1990-07-15',1);
 /*!40000 ALTER TABLE `certificate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,11 +85,11 @@ CREATE TABLE `education` (
 LOCK TABLES `education` WRITE;
 /*!40000 ALTER TABLE `education` DISABLE KEYS */;
 INSERT INTO `education` VALUES
-(1,1,'ROC Friese Poort','ICT Beheer','Leeuwarden',NULL,NULL,NULL),
-(2,1,'Windesheim','ADSD','Almere',NULL,NULL,NULL),
-(3,2,'Windesheim','ADSD','Almere',NULL,NULL,NULL),
-(4,3,'Windesheim','ADSD','Almere',NULL,NULL,NULL),
-(5,4,'Windesheim','ADSD','Almere',NULL,NULL,NULL),
+(1,1,'ROC Friese Poort','ICT Beheer','Leeuwarden','Anne Wadmanwei 6',582339966,'TestData'),
+(2,1,'Windesheim','ADSD','Almere','Stadhuisstraat 18',884696600,NULL),
+(3,2,'Windesheim','ADSD','Almere','Stadhuisstraat 18',884696600,NULL),
+(4,3,'Windesheim','ADSD','Almere','Stadhuisstraat 18',884696600,NULL),
+(5,4,'Windesheim','ADSD','Almere','Stadhuisstraat 18',884696600,NULL),
 (6,5,'Zang school','Zang',NULL,NULL,NULL,NULL),
 (7,6,'Zang school','Zang',NULL,NULL,NULL,NULL),
 (8,7,'Zang school','Zang',NULL,NULL,NULL,NULL);
@@ -165,13 +165,13 @@ CREATE TABLE `experience` (
 LOCK TABLES `experience` WRITE;
 /*!40000 ALTER TABLE `experience` DISABLE KEYS */;
 INSERT INTO `experience` VALUES
-(1,1,1,'Magazijnmedewerker',NULL,'2021-11-12',NULL,NULL),
-(2,2,2,'Software developer',NULL,'2022-06-15',NULL,NULL),
-(3,3,3,'Vakkenvuller',NULL,'2023-05-29',NULL,NULL),
-(4,4,4,'Verkoper',NULL,'2023-09-04',NULL,NULL),
-(8,5,5,'Zangeres',NULL,'1998-01-01','2015-12-31',NULL),
-(9,6,6,'Zangeres',NULL,'1998-01-01','2015-12-31',NULL),
-(10,7,7,'Zangeres',NULL,'1998-01-01','2009-06-30',NULL);
+(1,1,1,'Magazijnmedewerker','Orderlopen','2021-11-12',NULL,'Heel goede werknemer'),
+(2,2,2,'Software developer','Testen van nieuwe functies','2022-06-15',NULL,'Heel goede werknemer'),
+(3,3,3,'Vakkenvuller','Vakken vullen','2023-05-29',NULL,'Heel goede werknemer'),
+(4,4,4,'Verkoper','Verkopen van broodjes aap','2023-09-04',NULL,'Heel goede werknemer'),
+(8,5,5,'Zangeres','Zangeres bij K3','1998-01-01','2015-12-31','Heel goede werknemer'),
+(9,6,6,'Zangeres','Zangeres bij K3','1998-01-01','2015-12-31','Heel goede werknemer'),
+(10,7,7,'Zangeres','Zangeres bij K3','1998-01-01','2009-06-30','Heel goede werknemer');
 /*!40000 ALTER TABLE `experience` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +193,7 @@ CREATE TABLE `grades` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_grades_certificate1_idx` (`certificate_id`,`certificate_education_id`,`certificate_education_user_id`),
   CONSTRAINT `fk_grades_certificate1` FOREIGN KEY (`certificate_id`, `certificate_education_id`, `certificate_education_user_id`) REFERENCES `certificate` (`id`, `education_id`, `education_user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,7 +209,14 @@ INSERT INTO `grades` VALUES
 (4,5,5,4,'SL01',0),
 (5,6,6,5,'Liedjes zingen',8.9),
 (6,7,7,6,'Liedjes zingen',6.7),
-(7,8,8,7,'Liedjes zingen',7.5);
+(7,8,8,7,'Liedjes zingen',7.5),
+(8,2,2,1,'FD',0),
+(9,3,3,2,'FD',0),
+(10,4,4,3,'FD',0),
+(11,5,5,4,'FD',0),
+(12,6,6,5,'Dans',7.8),
+(13,7,7,6,'Dans',6.4),
+(14,8,8,7,'Dans',9.4);
 /*!40000 ALTER TABLE `grades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +235,7 @@ CREATE TABLE `hobby` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_hobby_user1_idx` (`user_id`),
   CONSTRAINT `fk_hobby_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,7 +251,14 @@ INSERT INTO `hobby` VALUES
 (4,4,'Gamen'),
 (5,5,'Zingen'),
 (6,6,'Zingen'),
-(7,7,'Zingen');
+(7,7,'Zingen'),
+(8,1,'Computeren'),
+(9,2,'pingpong'),
+(10,3,'bowlen'),
+(11,4,'sporten'),
+(12,5,'Dans'),
+(13,6,'Dans'),
+(14,7,'Dans');
 /*!40000 ALTER TABLE `hobby` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -319,12 +333,12 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` VALUES
 (1,'Rik','Bakker','2003-08-19','rik@wh.nl',611090427,'public/images/1_giphy.gif','Cupcake ipsum dolor sit amet shortbread cake cheesecake icing. Gingerbread caramels soufflé brownie cake brownie caramels croissant. Liquorice marshmallow fruitcake cake toffee gummies muffin gingerbread jujubes. Chupa chups donut cotton candy apple pie chocolate cake liquorice apple pie jelly.',1,'2023-10-19 18:31:01','2023-10-19 20:57:15'),
-(2,'Jari','Knoop',NULL,'jari@wh.nl',NULL,'public/images/2_Donald_Trump_official_portrait.jpeg','Sriracha wayfarers tofu brunch tonx XOXO ethical fam paleo thundercats unicorn pop-up air plant lo-fi succulents. Marxism tilde tofu XOXO pok pok bushwick 8-bit chicharrones twee. Stumptown vegan umami, locavore street art woke williamsburg asymmetrical. Raw denim tbh whatever XOXO, selvage literally shabby chic iPhone narwhal pinterest marfa ramps mustache DSA.',1,'2023-10-19 18:31:28','2023-10-19 20:57:17'),
-(3,'Dorian','Baies',NULL,'dorian@wh.nl',NULL,'/public/images/3_ashe.png','Gun Arr barkadeer galleon spanker spirits gally long boat square-rigged measured fer yer chains. Hang the jib come about lookout ho scourge of the seven seas knave swing the lead grog blossom draught deadlights. Poop deck scuppers yawl Gold Road grog blossom starboard Yellow Jack Barbary Coast Jack Tar bilged on her anchor.',1,'2023-10-19 18:31:57','2023-10-19 20:56:45'),
-(4,'Ashraf','Basnoe',NULL,'ashraf@wh.nl',NULL,'/public/images/4_mark.jpeg','Can we parallel path streamline your work on this project has been really impactful, for through the lens of tiger team, this is not the hill i want to die on. We want to see more charts can you champion this all hands on deck. Let\'s see if we can dovetail these two projects player-coach. Translating our vision of having a market leading platfrom table the discussion , nor that jerk from finance really threw me under the bus drop-dead date. Who\'s the goto on this job with the way forward helicopter view, and hit the ground running, for drink from the firehose. Design thinking who\'s the goto on this job with the way forward , enough to wash your face, for ultimate measure of success, yet through the lens of. Let\'s prioritize the low-hanging fruit exposing new ways to evolve our design language, yet touch base, and make it more corporate please, we need evergreen content, nor knowledge process outsourcing. Cloud native container based get in the driver\'s seat we can\'t hear you weâ€™re all in this together, even if our businesses function differently, net net, or we need a recap by eod, cob or whatever comes first. Prethink golden goose I just wanted to give you a heads-up can you slack it to me?, but accountable talk, or have bandwidth circle back. Win-win quarterly sales are at an all-time low. Eat our own dog food one-sheet nobody\'s fault it could have been managed better a better understanding of usage can aid in prioritizing future efforts, rehydrate the team. Cross functional teams enable out of the box brainstorming dogpile that turd polishing, for up the flagpole bazooka that run it past the boss jump right in and banzai attack will they won\'t they its all greek to me unless they bother until the end of time maybe vis a vis too many cooks over the line, for window-licker, and flesh that out, for I just wanted to give you a heads-up. Commitment to the cause let\'s circle back tomorrow pass the mayo, appeal to the client, sue the vice president strategic staircase design thinking. Obviously weâ€™re starting to formalize flexible opinions around our foundations put a record on and see who dances. The last person we talked to said this would be ready marketing, illustration cloud native container based hire the best. Digital literacy groom the backlog, we need to crystallize a plan, or can you put it on my calendar?, nor in this space. Marketing computer development html roi feedback team website synergestic actionables. Land the plane 60% to 30% is a lot of persent, or target rich environment feed the algorithm ensure to follow requirements when developing solutions, yet can you run this by clearance? hot johnny coming through , yet face time. Slow-walk our commitment. We have put the apim bol, temporarily so that we can later put the monitors on that\'s mint, well done quarterly sales are at an all-time low. Tbrand terrorists. Blue sky peel the onion powerPointless collaboration through advanced technlogy we don\'t need to boil the ocean here. We need to touch base off-line before we fire the new ux experience donuts in the break room five-year strategic plan, nor drill down. Circle back. Clear blue water action item let\'s pressure test this spinning our wheels.',1,'2023-10-19 18:32:20','2023-10-19 20:58:39'),
-(5,'Karen','Damen',NULL,'kd@k3.be',NULL,'/public/images/defaultProfilePic.jpg','Voluptatem exercitation for autem quasi exercitation incididunt yet doloremque. Molestiae ipsum, but do. Voluptas occaecat. Nequeporro. Ut nisi. Eum magnam nostrum laboriosam magnam occaecat. Perspiciatis aute nihil. Numquam quo. Minim beatae duis and doloremque pariatur. Occaecat numquam incididunt amet nostrum, aut perspiciatis.',0,'2023-10-19 18:32:50','2023-10-19 21:00:56'),
-(6,'Kristel','Verbeke',NULL,'kv@k3.be',NULL,'/public/images/defaultProfilePic.jpg','Inventore quae. Voluptas velit. Enim ea. Deserunt ad yet qui beatae iure. Quam proident but dicta aspernatur. Ex quae. Exercitationem qui. Ipsam. Velitesse nostrud and explicabo. Officia. Laudantium. Aute ullam, anim incidunt dolore. Ipsa commodo. Nihil. Enim modi error. Ratione pariatur yet si culpa and omnis yet laboris. Doloremque ipsum, for fugit yet amet but dicta and lorem enim. Ipsum esse and aliquam ullamco or voluptatem ullam sint. Commodo veritatis but illum for reprehenderit yet ex proident but magni. Commodo. Enim nesciunt and minima esse and consequatur, deserunt. Eos aperiam or aperiam but nesciunt.',0,'2023-10-19 18:33:13','2023-10-19 21:00:48'),
-(7,'Kathleen','Aerts',NULL,'ka@k3.be',NULL,'/public/images/defaultProfilePic.jpg','Dolorem dolorem. Quia iste. Ipsum adipisicing unde, yet aperiam. Nulla ea yet natus but eaque. Fugit. Amet. Nulla tempora. Iure consequat, nostrud aut for inventore. Fugit nisi. Duis quisquam minim or rem duis, dolores. Unde. Exercitationem iste aliquid and dolore and magna or tempor yet est. Quis sed so eius. Nisi elit for sunt. Enim culpa. In adipisicing, quae. Commodi enim for dicta and aliqua.',0,'2023-10-19 18:33:39','2023-10-19 21:01:45');
+(2,'Jari','Knoop','2002-03-04','jari@wh.nl',625746915,'public/images/2_Donald_Trump_official_portrait.jpeg','Sriracha wayfarers tofu brunch tonx XOXO ethical fam paleo thundercats unicorn pop-up air plant lo-fi succulents. Marxism tilde tofu XOXO pok pok bushwick 8-bit chicharrones twee. Stumptown vegan umami, locavore street art woke williamsburg asymmetrical. Raw denim tbh whatever XOXO, selvage literally shabby chic iPhone narwhal pinterest marfa ramps mustache DSA.',1,'2023-10-19 18:31:28','2023-11-02 09:30:02'),
+(3,'Dorian','Baies','1999-05-17','dorian@wh.nl',619785824,'public/images/3_ashe.png','Gun Arr barkadeer galleon spanker spirits gally long boat square-rigged measured fer yer chains. Hang the jib come about lookout ho scourge of the seven seas knave swing the lead grog blossom draught deadlights. Poop deck scuppers yawl Gold Road grog blossom starboard Yellow Jack Barbary Coast Jack Tar bilged on her anchor.',1,'2023-10-19 18:31:57','2023-11-02 09:29:50'),
+(4,'Ashraf','Basnoe','2002-11-15','ashraf@wh.nl',656876159,'public/images/4_mark.jpeg','Can we parallel path streamline your work on this project has been really impactful, for through the lens of tiger team, this is not the hill i want to die on. We want to see more charts can you champion this all hands on deck. Let\'s see if we can dovetail these two projects player-coach. Translating our vision of having a market leading platfrom table the discussion , nor that jerk from finance really threw me under the bus drop-dead date. Who\'s the goto on this job with the way forward helicopter view, and hit the ground running, for drink from the firehose. Design thinking who\'s the goto on this job with the way forward , enough to wash your face, for ultimate measure of success, yet through the lens of. Let\'s prioritize the low-hanging fruit exposing new ways to evolve our design language, yet touch base, and make it more corporate please, we need evergreen content, nor knowledge process outsourcing. Cloud native container based get in the driver\'s seat we can\'t hear you weâ€™re all in this together, even if our businesses function differently, net net, or we need a recap by eod, cob or whatever comes first. Prethink golden goose I just wanted to give you a heads-up can you slack it to me?, but accountable talk, or have bandwidth circle back. Win-win quarterly sales are at an all-time low. Eat our own dog food one-sheet nobody\'s fault it could have been managed better a better understanding of usage can aid in prioritizing future efforts, rehydrate the team. Cross functional teams enable out of the box brainstorming dogpile that turd polishing, for up the flagpole bazooka that run it past the boss jump right in and banzai attack will they won\'t they its all greek to me unless they bother until the end of time maybe vis a vis too many cooks over the line, for window-licker, and flesh that out, for I just wanted to give you a heads-up. Commitment to the cause let\'s circle back tomorrow pass the mayo, appeal to the client, sue the vice president strategic staircase design thinking. Obviously weâ€™re starting to formalize flexible opinions around our foundations put a record on and see who dances. The last person we talked to said this would be ready marketing, illustration cloud native container based hire the best. Digital literacy groom the backlog, we need to crystallize a plan, or can you put it on my calendar?, nor in this space. Marketing computer development html roi feedback team website synergestic actionables. Land the plane 60% to 30% is a lot of persent, or target rich environment feed the algorithm ensure to follow requirements when developing solutions, yet can you run this by clearance? hot johnny coming through , yet face time. Slow-walk our commitment. We have put the apim bol, temporarily so that we can later put the monitors on that\'s mint, well done quarterly sales are at an all-time low. Tbrand terrorists. Blue sky peel the onion powerPointless collaboration through advanced technlogy we don\'t need to boil the ocean here. We need to touch base off-line before we fire the new ux experience donuts in the break room five-year strategic plan, nor drill down. Circle back. Clear blue water action item let\'s pressure test this spinning our wheels.',1,'2023-10-19 18:32:20','2023-11-02 09:29:40'),
+(5,'Karen','Damen','1974-10-28','kd@k3.be',697813654,'public/images/defaultProfilePic.jpg','Voluptatem exercitation for autem quasi exercitation incididunt yet doloremque. Molestiae ipsum, but do. Voluptas occaecat. Nequeporro. Ut nisi. Eum magnam nostrum laboriosam magnam occaecat. Perspiciatis aute nihil. Numquam quo. Minim beatae duis and doloremque pariatur. Occaecat numquam incididunt amet nostrum, aut perspiciatis.',0,'2023-10-19 18:32:50','2023-11-02 09:29:31'),
+(6,'Kristel','Verbeke','1975-12-10','kv@k3.be',659781236,'public/images/defaultProfilePic.jpg','Inventore quae. Voluptas velit. Enim ea. Deserunt ad yet qui beatae iure. Quam proident but dicta aspernatur. Ex quae. Exercitationem qui. Ipsam. Velitesse nostrud and explicabo. Officia. Laudantium. Aute ullam, anim incidunt dolore. Ipsa commodo. Nihil. Enim modi error. Ratione pariatur yet si culpa and omnis yet laboris. Doloremque ipsum, for fugit yet amet but dicta and lorem enim. Ipsum esse and aliquam ullamco or voluptatem ullam sint. Commodo veritatis but illum for reprehenderit yet ex proident but magni. Commodo. Enim nesciunt and minima esse and consequatur, deserunt. Eos aperiam or aperiam but nesciunt.',0,'2023-10-19 18:33:13','2023-11-02 09:29:22'),
+(7,'Kathleen','Aerts','1978-06-18','ka@k3.be',615759414,'public/images/defaultProfilePic.jpg','Dolorem dolorem. Quia iste. Ipsum adipisicing unde, yet aperiam. Nulla ea yet natus but eaque. Fugit. Amet. Nulla tempora. Iure consequat, nostrud aut for inventore. Fugit nisi. Duis quisquam minim or rem duis, dolores. Unde. Exercitationem iste aliquid and dolore and magna or tempor yet est. Quis sed so eius. Nisi elit for sunt. Enim culpa. In adipisicing, quae. Commodi enim for dicta and aliqua.',0,'2023-10-19 18:33:39','2023-11-02 09:29:09');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -337,4 +351,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-19 23:05:46
+-- Dump completed on 2023-11-03  9:15:23

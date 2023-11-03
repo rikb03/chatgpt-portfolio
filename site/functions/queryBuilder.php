@@ -129,7 +129,9 @@ class QueryBuilder
         }
         $sql .= implode(", ", $fld);
         $sql .= " WHERE " . $cond;
-
+        if (strpos($sql, "'NULL'") !== false) {
+            $sql = str_replace("'NULL'", "NULL", $sql);
+        }
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();

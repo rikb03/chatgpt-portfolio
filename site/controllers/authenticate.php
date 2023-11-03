@@ -13,7 +13,6 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 
 // Gets the user id and password from the database if the username exists
 $results = $qb->selectCol('pud', 'user_id, loginPass', 'loginUser = "'  . $_POST["username"] . '"');
-$naam = $qb->selectCol('user', 'firstName', 'id = ' . $results[0]['user_id']);
 $_SESSION['method'] = $_POST["method"];
 
 // Checks if the password matches the password in the database and if so, logs the user in (sets the session variables)
@@ -21,6 +20,7 @@ if ($results == !NULL) {
     if (password_verify($_POST['password'], $results[0]['loginPass'])){
         // echo "Wachtwoord klopt";
         session_regenerate_id();
+        $naam = $qb->selectCol('user', 'firstName', 'id = ' . $results[0]['user_id']);
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['naam'] = $naam[0]['firstName'];
