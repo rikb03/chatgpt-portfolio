@@ -7,30 +7,12 @@
     <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/admin.css" type="text/css">
     <script src="../public/js/search.js"></script>
+    <script src="../public/js/nav.js"></script>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <nav class="navbar">
-            <div class="local">
-                <h2>Profile App</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+    <?php require('partials/nav.php'); ?>
     <main>
         <div class="users">
             <h1>Admin</h1>
@@ -39,19 +21,21 @@
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
                 <div class="list-container">
                 <ul class="horizontal-list" id="myUL">
-                    <li><a href="/edit"><?=$currentUser[0]['firstName'];?></a></li>
-                    <li><a href="/edit">Jari</a></li>
-                    <li><a href="/edit">Rik</a></li>
-                    <li><a href="/edit">Dorian</a></li>
-                    <li><a href="/edit">Ashraf</a></li>
-                    <li><a href="/edit">Test</a></li>
-                    <li><a href="/edit">TestTest</a></li>
+                    <?php for($u = 4; $u < count($users); $u++){ echo
+                        "<li><a href='edit?id=".$users[$u]['ID']."'>
+                            <article class='user'>
+                            <div>
+                                <h3>".$users[$u]['Naam']."</h3> <br>
+                            </div>
+                    </article>
+                </a></li>";
+                    }?>
                 </ul>
                 </div>
             </section>
         </div>
     </main>
 </div>
-    </body>
+</body>
 </html>
 
