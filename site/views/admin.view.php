@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/admin.css" type="text/css">
     <script src="../public/js/search.js"></script>
-    <script src="../public/js/nav.js"></script>
 </head>
 <body>
 
