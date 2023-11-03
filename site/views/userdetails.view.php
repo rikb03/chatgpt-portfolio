@@ -14,7 +14,7 @@
         <div class="wrapper">
             <div class="profilePic">
                 <img src="<?=(file_exists($currentUser[0]['profilePic'])) ? $currentUser[0]['profilePic'] : "public/images/defaultProfilePic.jpg";?>" alt="avatar" class="avatar">
-                <h2 class="h2pf">Profile pic</h2>
+                <h2 class="h2pf"><?=$currentUser[0]['firstName'], ' ', $currentUser[0]['lastName'] ?></h2>
                 <form action="upload" method="post" enctype="multipart/form-data" class="upload">
                     <input type="file" name="file" class="uploadFile">
                     <input type="submit" name="submit" value="Upload">

@@ -14,4 +14,21 @@ class updateData {
         if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
         } else {header('Location: /edit');}
     }
+    function add($table, $addArr) {
+        $succes = $this->qb()->insert($table, $addArr);
+        if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
+        } else {header('Location: /edit');}
+    }
+    function delete($table, $id) {
+        $succes = $this->qb()->delete($table, 'id='.$id);
+        if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
+        } else {header('Location: /edit');}
+    }
+    function update($table, $updateArr, $userId) {
+        $_POST['method'] = $updateArr['method'];
+        unset ($updateArr['method']);
+        $succes = $this->qb()->update($table, $updateArr, 'id='.$userId);
+        if ($succes != 1) {errorMessage("Something went wrong, try again", 'edit');
+        } else {header('Location: /edit');}
+    }
 }
