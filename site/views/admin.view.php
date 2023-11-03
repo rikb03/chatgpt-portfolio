@@ -1,6 +1,3 @@
-<?php
-echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +6,7 @@ echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
     <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/admin.css" type="text/css">
+    <script src="../public/js/search.js"></script>
 </head>
 <body>
 
@@ -38,49 +36,16 @@ echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
             <h1>Admin</h1>
             <section>
                 <h3>Users list</h3>
-                <input type="text" placeholder=" Search " name="search" class="search">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
                 <div class="list-container">
-                <ul class="horizontal-list">
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
-                    <li>
-                        <img src="avatar.png" alt="avatar">
-                        <h2>Voornaam Achternaam</h2>
-                        <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repellendus.</p></a>
-                    </li>
+                <ul class="horizontal-list" id="myUL">
+                    <li><a href="#">Woodie</a></li>
+                    <li><a href="#">Jari</a></li>
+                    <li><a href="#">Rik</a></li>
+                    <li><a href="#">Dorian</a></li>
+                    <li><a href="#">Ashraf</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">TestTest</a></li>
                 </ul>
                 </div>
             </section>
@@ -97,7 +62,7 @@ echo "<h1> Alleen een admin hoort dit te kunnen zien </h1>";
         Template_Home.classList.toggle("active");
         navMenu.classList.toggle("active");
     }
-</script>
-</body>
+
+    </body>
 </html>
 
