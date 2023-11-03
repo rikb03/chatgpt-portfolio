@@ -13,7 +13,7 @@ if (!isset($_SESSION['loggedin'])) {
     exit();
 }
 
-// Remove empty values from $_POST
+// Change empty values in $_POST to NULL
 foreach($_POST as $key=>$value){
     if(is_null($value) || $value == '')
         $_POST[$key] = "NULL";
@@ -21,7 +21,7 @@ foreach($_POST as $key=>$value){
 
 switch ($_POST['method']) {
     case "userData":
-      $edit->updateUserData($_POST, $_SESSION['userid']);
+      $edit->update('user', $_POST, $_SESSION['userid']);
       break;
     case "certificate":
       break;
