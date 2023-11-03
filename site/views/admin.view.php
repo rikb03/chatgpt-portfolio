@@ -39,30 +39,19 @@
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
                 <div class="list-container">
                 <ul class="horizontal-list" id="myUL">
-                    <li><a href="#">Woodie</a></li>
-                    <li><a href="#">Jari</a></li>
-                    <li><a href="#">Rik</a></li>
-                    <li><a href="#">Dorian</a></li>
-                    <li><a href="#">Ashraf</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">TestTest</a></li>
+                    <li><a href="/edit"><?=$currentUser[0]['firstName'];?></a></li>
+                    <li><a href="/edit">Jari</a></li>
+                    <li><a href="/edit">Rik</a></li>
+                    <li><a href="/edit">Dorian</a></li>
+                    <li><a href="/edit">Ashraf</a></li>
+                    <li><a href="/edit">Test</a></li>
+                    <li><a href="/edit">TestTest</a></li>
                 </ul>
                 </div>
             </section>
         </div>
     </main>
 </div>
-<script>
-    const Template_Home = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-
-    Template_Home.addEventListener("click", mobileMenu);
-
-    function mobileMenu() {
-        Template_Home.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    }
-
     </body>
 </html>
 

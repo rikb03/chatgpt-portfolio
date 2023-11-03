@@ -37,48 +37,6 @@ section {
     overflow-y: auto; /* Add vertical scroll when the content exceeds the container's height */
 }
 
-.horizontal-list {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Use flexbox to display the items horizontally */
-    flex-wrap: wrap;
-    flex-direction: column;
-    overflow: scroll;
-}
-
-.horizontal-list li {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
-
-}
-
-.horizontal-list li:last-child {
-    margin-right: 0;
-}
-
-/* Style the individual elements within each <li> */
-.horizontal-list h2 {
-    margin: 10px;
-    color: white;
-    font-size: 20px;
-}
-
-.horizontal-list img {
-    max-width: 100px;
-    margin-right: 10px;
-}
-
-.horizontal-list p {
-    margin: 0;
-    color: #7289da;
-}
-
-.horizontal-list a {
-    text-decoration: none;
-}
-
 section input {
     display: flex;
     text-align: center;
@@ -98,4 +56,9 @@ section h3{
     margin: 10px;
     font-size: 25px;
     padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
