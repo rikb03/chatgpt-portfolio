@@ -14,7 +14,8 @@ $routes = [
     "/signup" => "controllers/signup.php",
     "/logout" => "controllers/logout.php",
     "/test" => "test.php",
-    "/upload" => "controllers/upload.php"
+    "/upload" => "controllers/upload.php",
+    "/updatedata" => "controllers/updateData.php",
 ];
 // Check if the URL exists in the array and require the correct controller else require the 404 controller
 if(array_key_exists($_SERVER['REQUEST_URI'], $routes)) {

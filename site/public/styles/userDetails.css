@@ -34,7 +34,12 @@ h1{
 
 .avatar {
     width: 200px;
+    height: 200px;
     border-radius: 50%;
+}
+
+.h2pf {
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -58,16 +63,23 @@ h1{
     width: 300px;
     text-align: center;
     outline: none;
-    border-bottom: 3px black solid;
+    /* border-bottom: 3px black solid; */
 }
 
 .submit {
     margin-top: 20px;
-    max-width: 100px;
-    background-color: #7289da;
-    outline: black;
-    font-size: 15px;
-    font-weight: bold;
+    width: auto;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7289da;
+    line-height: 1.15;
+    font-size: 16px;
 }
 
 .userData h2 {
@@ -100,6 +112,7 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10px;
 }
 
 .form input {
@@ -116,8 +129,37 @@ h1{
     color: white;
 }
 
-.error {
+#error {
     color: red;
     text-align: center;
     padding: 10px;
+}
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uploadFile::-webkit-file-upload-button {
+    display: none;
+}
+
+.uploadFile::before {
+    content: 'Select image to upload';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+ }
+
+.uploadFile:hover::before {
+    border: 1px solid black;
 }
