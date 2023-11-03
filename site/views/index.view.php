@@ -12,7 +12,7 @@
             <aside>
                 <div class="post">
                     <h1>Welcome!</h1>
-                    <p>Placeholder welcome message</p>
+                    <p>Are you looking for a powerful tool to showcase your professional journey and educational achievements in one place? Look no further! ProfileApp is the ultimate app that empowers you to build and manage your digital portfolio effortlessly</p>
                 </div>
             </aside>    
             <section class="team">

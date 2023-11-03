@@ -1,3 +1,5 @@
+/*Creating header styling with grid column start and end
+And also adding the background color and height*/
 header {
     line-height: 100px;
     display: flex;
@@ -7,20 +9,24 @@ header {
     grid-column-end: span 3;
 }
 
+/*Changing header color*/
 header h2{
     color: #7289da;
 }
 
+/*Changing navbar alignment and spacing*/
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
 }
+
 .hamburger {
     display: none;
 }
 
+/*Creating the transition for the menu*/
 .bar {
     display: block;
     width: 30px;
@@ -43,6 +49,7 @@ header h2{
     text-decoration: none;
 }
 
+/*Changing the opening menu styling and adjust the size*/
 .nav-menu {
     position: fixed;
     left: 100%;
@@ -56,6 +63,7 @@ header h2{
     margin: 0;
 }
 
+/*Positioning of the menu*/
 .nav-menu.active {
     left: calc(100% - 150px);
 }
@@ -73,8 +81,9 @@ header h2{
     font-size: 1em;
 }
 
+/*Logo inside the navbar*/
 img {
-    margin-top: 0;
+    margin-top: 40px;
     height: 80px;
     width: 120px;
 }
