@@ -100,7 +100,7 @@
                         <div class="detail">
                             <ul class="hobbies">
                                 <?php foreach($dataHobby as $hobby){echo
-                                    "<li class='open-button' onclick='openForm()'>
+                                    "<li>
                                     <p>".ucFirst($hobby["Hobby"])."</p></li>";}?>
                             </ul>
                         </div>

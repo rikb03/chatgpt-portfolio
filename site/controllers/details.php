@@ -53,5 +53,6 @@ WHERE e.user_id =" .$id;
 
 $dataSchoolCert = $qb->customQuery($schoolCertQuery);
 
+
 // Deze Query werkt en geeft maar 1 result per education! Nu alleen nog de rest fixen 😰
 require 'views/details.view.php';
