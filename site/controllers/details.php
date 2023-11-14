@@ -13,42 +13,45 @@ if(!isset($_GET["id"]) || $_GET["id"] > count($userIds) || $_GET["id"] < 1){
 }
 $id = $_GET["id"];
 
-$queryJobs = "SELECT employerName AS Bedrijf, employerCity AS Stad, employerAddress AS Adres, employerMail AS Mail, employerPhone AS Telefoon FROM employer WHERE user_id = ". $id;
-$hobbyQuery = "SELECT hobbyName AS Hobby FROM hobby WHERE user_id = ". $id;
-
+$queryJobs = "SELECT 
+id AS ID, 
+employerName AS Bedrijf, 
+employerCity AS Stad, 
+employerAddress AS Adres, 
+employerMail AS Mail, 
+employerPhone AS Telefoon 
+FROM employer 
+WHERE user_id = ". $id;
 $jobData = $qb->customQuery($queryJobs);
+
+$hobbyQuery = "SELECT hobbyName AS Hobby FROM hobby WHERE user_id = ". $id;
 $dataHobby = $qb->customQuery($hobbyQuery);
 
 $personQuery = "SELECT id, concat(firstname, ' ', lastName) AS Naam, profilePic AS Profielfoto, description AS Beschrijving FROM user WHERE id = ". $id;
 $dataPerson = $qb->customQuery($personQuery);
 
-$certificateQuery = 
-"SELECT 
-c.education_id AS ID,
-c.certificateName AS Diploma, 
-YEAR(c.certificateDateStart) AS Begonnen, 
-YEAR(c.certificateDateFinished) AS Behaald 
-FROM certificate c 
-WHERE c.education_user_id = " . $id;
-$dataCertificate = $qb->customQuery($certificateQuery);
-
-$schoolQuery =
-"SELECT
-e.id AS ID,
-schoolName AS School,
-schoolCourse AS Opleiding,
-schoolCity AS Stad,
-schoolAddress AS Adres,
-schoolPhone AS Telefoon,
-schoolReference AS Referentie
-FROM education e
-WHERE e.user_id = 1";
-$dataSchool = $qb->customQuery($schoolQuery);
-
-$gradesQuery = "SELECT g.subject AS Vak, grade AS Cijfer FROM grades g WHERE g.certificate_education_user_id =" . $id;;
+$gradesQuery = "SELECT c.id AS ID, g.subject AS Vak, grade AS Cijfer 
+FROM grades g 
+JOIN certificate c ON c.id = g.certificate_id 
+WHERE c.education_user_id =" . $id;
 $dataGrades = $qb->customQuery($gradesQuery);
 
-// print("<pre>".print_r($dataCertificate,true)."</pre>");
+$schoolCertQuery = 
+"SELECT 
+e.schoolName AS Schoolnaam,
+e.schoolCity AS Schoolstad,
+e.schoolAddress AS Schooladres,
+e.schoolPhone AS Schooltelefoon,
+e.schoolReference AS Schoolreferentie,
+c.id AS ID, 
+c.certificateName AS Opleiding, 
+YEAR(c.certificateDateStart) AS Begonnen, 
+YEAR(c.certificateDateFinished) AS Behaald
+FROM education e
+JOIN certificate c ON c.education_id = e.id
+WHERE e.user_id =" .$id;
+
+$dataSchoolCert = $qb->customQuery($schoolCertQuery);
 
 // Deze Query werkt en geeft maar 1 result per education! Nu alleen nog de rest fixen 😰
 require 'views/details.view.php';

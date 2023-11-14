@@ -103,18 +103,27 @@ section {
 }
 
 /* The popup form - hidden by default */
-.form-popup {
+.detailpopup {
+    padding: 25px;
     display: none;
     position: fixed;
-    top: 50%;
-    margin-top: -350px;
-    right: 50%;
-    margin-right: -350px;
     background-color: #282b30;
-    width: 700px;
-    height: 700px;
     box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
+    width: 750px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin-left: -350px;
+    margin-top: -250px;
     border-radius: 10px;
+}
+
+.popupContainer {
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    width: 95%;
+    margin: 25px auto;
 }
 
 .popupClose {
@@ -126,4 +135,30 @@ section {
     width: 30px;
     text-align: center;
     text-size-adjust: 5px;
+}
+
+.certDetails {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width: max-content;
+    font-size: 15px;
+}
+
+.popupContainer .detail {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popupContainer li {
+    min-width: max-content;
+    max-width: 90%;
+    background-color: grey;
+}
+
+.grades {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
 }
