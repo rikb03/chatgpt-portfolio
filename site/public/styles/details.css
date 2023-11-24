@@ -1,4 +1,4 @@
-/*Adjusting the main grid layout and shdows*/
+/*Adjusting the main grid layout and shadows*/
 main {
     background-color: #36393e;
     color: #ffffff;
@@ -12,14 +12,14 @@ main {
 section {
     background-color: #36393e;
 }
-
+/*Distances the content from borders*/
 .userData {
     margin: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
+/*Flex/column/center is used so the name is placed above the description*/
 .nameDescription {
     max-height: 250px;
     padding: 25px;
@@ -33,27 +33,27 @@ section {
     font-size: 40px;
     margin-bottom: 10px;
 }
-
+/*If text is overflowing makes it scrollable*/
 .description {
     justify-content: start;
     white-space: normal;
     overflow: auto;
     text-overflow: ellipsis;
 }
-
+/*Makes element a circle, and fits the content to given size without stretching*/
 .profilePic {
     height: 250px;
     width: 250px;
     border-radius: 50%;
     object-fit: cover; 
 }
-
+/*Centers all text, and displays contained elements next to eachother*/
 .details {
     text-align: center;
     display: flex;
     justify-content: center;
 }
-
+/*Simple box, scrollbar hidden, box-shadow added to better discern from background*/
 .detail {
     box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
@@ -67,11 +67,11 @@ section {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
+/*Hides scroll bar for certain browsers*/
 .detail::-webkit-scrollbar, .description::-webkit-scrollbar{
     display: none;
   }
-
+/*Removes list dots, transition used for hover*/
 .detail ul li {
     padding: 5px;
     background-color: #36393e;
@@ -81,7 +81,7 @@ section {
     list-style-type: none;
     transition: 0.4s;
 }
-
+/*On hover, changes background colour and adds box-shadow*/
 .detail ul li:hover {
     background-color: #1e2124;
     box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
@@ -90,20 +90,20 @@ section {
 .detail ul li p {
     padding: 2px;
 }
-
+/*Flex used to space multiple elements with an evenly between eachother*/
 .certificates li {
     display: flex;
     justify-content: space-between;
     white-space: nowrap;
 }
-
+/*If text is too long, add dots...*/
 .certificates li p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* The popup form - hidden by default */
+/*The pop-up form, centered in the middle of the site, hidden by default*/
 .detailpopup {
     padding: 25px;
     display: none;
@@ -118,7 +118,7 @@ section {
     margin-top: -250px;
     border-radius: 10px;
 }
-
+/*Contains the info inside the pop-up*/
 .popupContainer {
     display: flex;
     flex-direction: row;
@@ -126,7 +126,7 @@ section {
     width: 95%;
     margin: 25px auto;
 }
-
+/*Used for our beautiful button that closes the pop-up*/
 .popupClose {
     float: right;
     border : 5px solid black;
@@ -137,7 +137,7 @@ section {
     text-align: center;
     text-size-adjust: 5px;
 }
-
+/*Centers horizontally, width matches content width*/
 .certDetails {
     margin-left: auto;
     margin-right: auto;
@@ -145,19 +145,13 @@ section {
     width: max-content;
     font-size: 15px;
 }
-
+/*Centers .detail class in the pop-up*/
 .popupContainer .detail {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
-
-.popupContainer li {
-    min-width: max-content;
-    max-width: 90%;
-    background-color: grey;
-}
-
+/*Centers horizontally*/
 .grades {
     margin-left: auto;
     margin-right: auto;

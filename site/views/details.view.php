@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head> 
+        <!-- Changes the page title to "Profile App - (Person's Name)" -->
         <title> Profile App - <?= $dataPerson[0]["Naam"]?></title>
         <link rel='stylesheet' href='public/styles/main.css'>
         <link rel='stylesheet' href='public/styles/details.css'>
@@ -10,6 +11,7 @@
         <div class="container">
             <?php require('partials/nav.php'); ?>
             <main>
+                <!-- Section contains main user data with their full description -->
                 <section class="userData">
                     <article class="picture">
                         <img src="<?= (file_exists($dataPerson[0]["Profielfoto"]) ? $dataPerson[0]["Profielfoto"] : "public/images/defaultProfilePic.jpg");?>" class="profilePic">
@@ -19,7 +21,10 @@
                         <p class="description"> <?= $dataPerson[0]["Beschrijving"];?> </p>
                     </article>
                 </section>
+                <!-- Section contains articles, shows titles with a list of details below -->
                 <section class="details">
+                    <!-- Creates a clickable list item and pop-up div for every certificate, shows the pop-up on click which contains detailed information for that item.
+                         Original plan was to have a single pop-up that changed the content based on ID gotten from showDetails, but this was unachievable for us. -->
                     <article>
                         <h1> Certificates </h1>
                         <div class="detail">
@@ -65,10 +70,10 @@
                                         </div>
                                     </div>";
                                     }?>
-                                <!-- TO DO: On click: Show alle info over diploma (Alle school info en jaren dat je er was)-->
                             </ul> 
                         </div>
                     </article>
+                    <!-- Same functionality as certificates, completely forgot to add work experience because I was too happy that the pop-ups finally worked -->
                     <article>
                         <h1> Work Experience </h1>
                         <div class="detail">
@@ -91,10 +96,10 @@
                                             </div>
                                         </div>
                                     </div>";}?>
-                                <!-- TO DO: On click: Show alle info over bedrijf -->
                             </ul>
                         </div>
                     </article>
+                    <!-- Displays a person's hobbies, no pop-ups here -->
                     <article>
                         <h1> Hobbies </h1>
                         <div class="detail">
@@ -109,5 +114,6 @@
             </main>
         </div>
     </body>
+    <!-- Loads the script to show pop-ups -->
     <script src="public/js/details.js"></script>
 </html>

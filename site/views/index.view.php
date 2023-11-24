@@ -9,12 +9,14 @@
     <div class="container">
         <?php require('partials/nav.php'); ?>
         <main>
+            <!-- Welcome message and site description -->
             <aside>
                 <div class="post">
                     <h1>Welcome!</h1>
                     <p>Are you looking for a powerful tool to showcase your professional journey and educational achievements in one place? Look no further! ProfileApp is the ultimate app that empowers you to build and manage your digital portfolio effortlessly</p>
                 </div>
-            </aside>    
+            </aside>   
+             <!-- Create articles for the first 4 members, per article it includes their: Profile Picture, Name, Description, Link to their personal page -->
             <section class="team">
                 <?php for($t = 0; $t < 4; $t++){ echo
                 "<a href='details?id=".$users[$t]['ID']."'>
@@ -30,6 +32,7 @@
                 </a>";
                 }?>
             </section>
+            <!-- Same functionality as above, all users with an ID higher than 4 are displayed -->
             <section class="users">
                 <?php for($u = 4; $u < count($users); $u++){ echo
                 "<a href='details?id=".$users[$u]['ID']."'>
