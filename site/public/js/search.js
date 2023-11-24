@@ -1,3 +1,5 @@
+// This is used on the admin page to search for users
+// Searches the list of users and displays the results
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
