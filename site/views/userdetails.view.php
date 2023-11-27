@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>UserDetails</title>
+    <!-- Loads the css files -->
     <link rel="stylesheet" href="../public/styles/main.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="../public/styles/userDetails.css" type="text/css">
 </head>
 <body>
 <div class="container">
+    <!-- Inserts the navigation bar -->
     <?php require('partials/nav.php'); ?>
     <main>
         <div class="wrapper">
+            <!-- profilePic column -->
             <div class="profilePic">
+                <!-- Displays the users profilePic -->
                 <img src="<?= (file_exists($currentUser[0]['profilePic'])) ? $currentUser[0]['profilePic'] : "public/images/defaultProfilePic.jpg"; ?>"
                      alt="avatar" class="avatar">
+                <!-- Name of the user -->
                 <h2 class="h2pf"><?= $currentUser[0]['firstName'], ' ', $currentUser[0]['lastName'] ?></h2>
+                <!-- Form to upload a new profilePic -->
                 <form action="upload" method="post" enctype="multipart/form-data" class="upload">
                     <input type="file" name="file" class="uploadFile">
                     <input type="submit" name="submit" value="Upload">
                      <input type="hidden" name="method" value="upload">
                 </form>
+                <!-- If there is an error on submit it will be displayed here -->
                 <p id='error' class='errorUpload' style='display:none'></p>
             </div>
+            <!-- userData column -->
             <div class="userData">
                 <h2>User Data</h2>
+                <!-- Form to update User Data with the current values as default value.
+                     On submit it sends the data to the updateData controller -->
                 <form class="formData" action="updatedata" method="post">
                     <label for="firstname">Firstname</label>
                     <input type="text" value="<?= $currentUser[0]['firstName']; ?>" name="firstName"
@@ -46,6 +56,7 @@
                     <!--                    <label for="password">Password</label>-->
                     <!--                    <input type="password" name="password" placeholder="Password" id="password" required>-->
                     <input type="hidden" name="method" value="userData">
+                    <!-- If there is an error on submit it will be displayed here -->           
                     <p id='error' class='errorUserData' style='display:none'></p>
                     <input type="submit" value="save" class="submit" id="userData">
                 </form>
@@ -53,7 +64,9 @@
 
 
             <!--            //CERTIFICATES-->
+            <!-- certificates column -->
             <div class="certificates">
+                <!-- Form to update users certificates -->
                 <form class="form" action="updatedata" method="post">
                     <label>Certificate</label>
 
@@ -96,6 +109,7 @@
 
 
                 <!--            EXPERIENCE-->
+                <!-- Form to update users experiences -->
                 <form class="form" action="updatedata" method="post">
 
                     <label>Experience</label>
@@ -138,7 +152,7 @@
 
 
                 <!--                HOBBIES-->
-
+                <!-- Form to update users hobbys -->
                 <form class="form" action="updatedata" method="post">
 
                     <label>Hobby</label>
@@ -195,6 +209,7 @@
     <aside>
     </aside>
 </div>
+<!-- Loads the javascript files -->
 <script src="../public/js/error.js"></script>
 </body>
 </html>
