@@ -17,12 +17,14 @@ h1{
     padding: 20px;
 }
 
+/* Makes 3 grid columns for the different actions */
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 330px);
     background-color: #36393e;
 }
 
+/* Sets the flexBox settings for the profilePic column */
 .profilePic {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,7 @@ h1{
     color: white;
 }
 
+/* Makes the profilePic round */
 .avatar {
     width: 200px;
     height: 200px;
@@ -40,11 +43,13 @@ h1{
     object-fit: cover;
 }
 
+/* Sets padding for the name under the profilePic */
 .h2pf {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+/* Makes a flexBox for the 'User Data' form */
 .formData {
     display: flex;
     flex-flow: column wrap;
@@ -54,11 +59,13 @@ h1{
     margin-top: 50px;
 }
 
+/* Styles the 'User data' form labels */
 .formData label {
     padding: 10px;
     color: white;
 }
 
+/* Styles the 'User Data' form input fields */
 .formData input {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -68,6 +75,7 @@ h1{
     /* border-bottom: 3px black solid; */
 }
 
+/* Styles the submit(save) buttons */
 .submit {
     margin-top: 20px;
     width: auto;
@@ -84,6 +92,7 @@ h1{
     font-size: 16px;
 }
 
+/* Places the 'User Data' column heading in the center and sets text size/color */
 .userData h2 {
     text-align: center;
     color: white;
@@ -91,13 +100,7 @@ h1{
     font-size: 25px;
 }
 
-.certificates h2 {
-    text-align: center;
-    color: white;
-    padding-top: 20px;
-    font-size: 25px;
-}
-
+/* Makes the certificates(Update certificate, experience and hobby) column flex */
 .certificates {
     display: flex;
     flex-direction: column;
@@ -106,6 +109,7 @@ h1{
     color: white;
 }
 
+/* Add flexBox to the 3 boxes in the certificates column and styles them */
 .form {
     display: flex;
     background-color: #1e2124;
@@ -117,6 +121,7 @@ h1{
     padding-bottom: 10px;
 }
 
+/* Styles the 'Certificates' form input fields */
 .form input {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -126,27 +131,32 @@ h1{
     border-bottom: 3px black solid;
 }
 
+/* Styles the 'Certificates' form labels */
 .form label {
     padding: 10px;
     color: white;
 }
 
+/* Makes the error message red */
 #error {
     color: red;
     text-align: center;
     padding: 10px;
 }
 
+/* Makes the file upload form flexbox */
 .upload {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Hides the original file upload button */
 .uploadFile::-webkit-file-upload-button {
     display: none;
 }
 
+/* Styles the 'select image' button with a text, makes the mouse a pointer and more */
 .uploadFile::before {
     content: 'Select image to upload';
     display: inline-block;
@@ -162,10 +172,12 @@ h1{
     font-size: 10pt;
  }
 
+ /* On hover set the 'select image' buttons border to black */
 .uploadFile:hover::before {
     border: 1px solid black;
 }
 
+/* Sets the width for the selection menus */
 select {
 
     width: 200px;

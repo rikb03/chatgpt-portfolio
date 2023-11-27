@@ -10,29 +10,34 @@ main {
     justify-content: center;
 }
 
+/* Makes the login and signup form flexBox */
 .form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login h1 {
+/* Styles for forms H1 */
+.login h1, .signup h1 {
     align-items: center;
     color: white;
     padding-bottom: 15px;
 }
 
+/* Makes the error message red */
 .error {
     color: red;
     align-self: center;
     padding: 10px;
 }
 
-.login a {
+/* Sets the color for forms a (Forgot password link) */
+.login a, .signup a {
     color: 	#7289da;
 }
 
-.login {
+/* Styles the boxes for both forms with flex, box-shadows and more */
+.login, .signup {
     margin: 50px;
     display: flex;
     align-items: center;
@@ -46,6 +51,7 @@ main {
     box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
 }
 
+/* FlexBox CSS for the labels and input fields in the login form */
 .login .labelUsername, .labelPassword, .username, .password {
     display: flex;
     flex-flow: column wrap;
@@ -53,6 +59,7 @@ main {
     align-items: center;
 }
 
+/* FlexBox CSS for the buttons in the forms */
 .buttons, .buttons2 {
     display: flex;
     justify-content: space-evenly;
@@ -61,11 +68,13 @@ main {
 
 }
 
-.login label {
+/* Style for the input labels in the forms */
+.login label, .signup label {
     padding: 10px;
     color: white;
 }
 
+/* Style for the input fields in the login form */
 .username, .password {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -75,7 +84,8 @@ main {
     border-bottom: 3px black solid;
 }
 
-.login .button {
+/* Style for the confirm(login/sign-up) buttons in the forms */
+.login .button, .signup .button2 {
     margin-top: 20px;
     width: auto;
     display: inline-block;
@@ -91,30 +101,7 @@ main {
     font-size: 16px;
 }
 
-.signup h1 {
-    align-items: center;
-    color: white;
-    padding-bottom: 30px;
-}
-
-.signup a {
-    color: 	#7289da;
-}
-
-.signup {
-    margin: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*border: 1px white solid;*/
-    width: 70%;
-    height: max-content;
-    padding: 20px;
-    flex-flow: column wrap;
-    background-color: #36393e;
-    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5), -10px 0 10px -5px rgba(0, 0, 0, 0.5);
-}
-
+/* FlexBox CSS for the labels and input fields in the signup form */
 .signup .labelFirstname, .firstname, .labelLastname, .lastname, .mail, .labelMail, .labelUsername2, .username2, .labelPassword2, .password2, .labelConfirm, .confirmPassword {
     display: flex;
     flex-flow: column wrap;
@@ -123,11 +110,7 @@ main {
     width: 300px;
 }
 
-.signup label {
-    padding: 10px;
-    color: white;
-}
-
+/* Style for the input fields in the signup form */
 .firstname,.lastname,.mail,.username2,.password2,.confirmPassword {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -137,38 +120,8 @@ main {
     border-bottom: 3px black solid;
 }
 
-.signup .button2 {
-    margin-top: 20px;
-    width: auto;
-    outline: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 3px;
-    padding: 12px 24px;
-    border: 0;
-    color: #000021;
-    background: #7289da;
-    line-height: 1.15;
-    font-size: 16px;
-}
-
-.showButton {
-    flex-wrap: nowrap;
-    margin-top: 20px;
-    width: auto;
-    outline: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 3px;
-    padding: 12px 24px;
-    border: 0;
-    color: #000021;
-    background: #7289da;
-    line-height: 1.15;
-    font-size: 16px;
-}
-
-.showButton2 {
+/* CSS for buttons to switch between the signup and login form */
+.showButton, .showButton2{
     flex-wrap: nowrap;
     margin-top: 20px;
     width: auto;
