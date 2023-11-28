@@ -23,6 +23,7 @@ body {
     margin: 0 auto;
 }
 
+/* creates a horizontally centered navigation bar within a container, with items evenly spaced apart along the bar */
 .container nav {
     display: flex;
     align-items: center;
