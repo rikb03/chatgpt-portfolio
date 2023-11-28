@@ -36,12 +36,15 @@ header h2{
     transition: all 0.3s ease-in-out;
     background-color: #7289da;
 }
+
+/* Organizes a navigation menu where items are evenly spaced along the horizontal */
 .nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Styling nav links */
 .nav-link{
     font-size: 20px;
     font-weight: 400;
